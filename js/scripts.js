@@ -13,6 +13,13 @@ function init() {
     request();
 
     autocomplete(document.getElementById("myInput"), listeNomArrets);
+
+    $("#draggable").draggable({
+        stop: function(event, ui) {
+            var draggableLatLng = map.containerPointToLatLng(L.point(ui.position.left, ui.position.top));
+            alert("Latitude: " + draggableLatLng.lat + ", Longitude: " + draggableLatLng.lng);
+        }
+    });
 }
 
 
