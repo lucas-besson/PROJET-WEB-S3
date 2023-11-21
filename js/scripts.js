@@ -1,5 +1,8 @@
 addEventListener("load", init);
 
+var myDraggable = $("#draggable");
+var draggableLatLng;
+
 function init() {
     var map = L.map('map').setView([48.866667, 2.333333], 13);
 
@@ -14,11 +17,18 @@ function init() {
 
     autocomplete(document.getElementById("myInput"), listeNomArrets);
 
-    $("#draggable").draggable({
+    myDraggable.draggable({
         stop: function(event, ui) {
-            var draggableLatLng = map.containerPointToLatLng(L.point(ui.position.left, ui.position.top));
-            alert("Latitude: " + draggableLatLng.lat + ", Longitude: " + draggableLatLng.lng);
+            draggableLatLng = map.containerPointToLatLng(L.point(ui.position.left, ui.position.top));
+            myDraggable.data('latLng', draggableLatLng);
         }
+    });
+
+    map.on('move zoomend', function(event) {
+        myDraggable.css({
+            top: map.latLngToContainerPoint(draggableLatLng).y + "px",
+            left: map.latLngToContainerPoint(draggableLatLng).x + "px"
+        });
     });
 }
 
