@@ -64,13 +64,29 @@ input[type=submit] {
 
 /* Début du composant draggable */
 
-#draggable { 
-  width: 16%; 
-  height: 4%; 
+#myDragItem { 
   padding: 2%; 
-  float: left; 
-  margin: 2%; 
   z-index: 1;
+  display: flex;
+  align-items: center;
+}
+
+#myDragItem p { 
+  margin: 0 !important;
+  user-select: none;
+}
+
+#myDragSection {
+  display: flex;
+  align-items: center;
+}
+
+#myDragLabel, #myDragButton, #myBtnDel, #myDragItem{
+  margin: 2%;
+}
+
+#myMenu {
+  z-index: 2;
 }
 
 /* Fin du composant draggable */

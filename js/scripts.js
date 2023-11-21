@@ -1,7 +1,9 @@
 addEventListener("load", init);
 
-var myDraggable = $("#draggable");
+var myDraggable = $("#myDragItem");
 var draggableLatLng;
+var myDraggableButton = $("#myDragButton");
+var newDrag = '<div id="myDragSection"> <div id="myDragLabel">Nom du lieu</div> <button id="myDragButton">Placer</button> <button id="myBtnDel">X</button> <div id="myDragItem" class="ui-widget-content"> <p>Icon</p> </div> </div>'
 
 function init() {
     var map = L.map('map').setView([48.866667, 2.333333], 13);
@@ -17,11 +19,18 @@ function init() {
 
     autocomplete(document.getElementById("myInput"), listeNomArrets);
 
+    myDraggableButton.prop("disabled", true);
+
     myDraggable.draggable({
         stop: function(event, ui) {
             draggableLatLng = map.containerPointToLatLng(L.point(ui.position.left, ui.position.top));
             myDraggable.data('latLng', draggableLatLng);
-        }
+            
+            myDraggableButton.text("Enregistrer");
+            myDraggableButton.prop("disabled", false);
+        },
+        containment: "#map", 
+        scroll: false
     });
 
     map.on('move zoomend', function(event) {
@@ -29,6 +38,17 @@ function init() {
             top: map.latLngToContainerPoint(draggableLatLng).y + "px",
             left: map.latLngToContainerPoint(draggableLatLng).x + "px"
         });
+    });
+
+    myDraggableButton.on("click", function() {
+        if(myDraggableButton.text() === "Enregistrer"){
+            myDraggable.draggable("disable");
+            myDraggableButton.text("Modifier");
+        } else if(myDraggableButton.text() === "Modifier"){
+            myDraggable.draggable("enable");
+            myDraggableButton.text("Placer");            
+            $("#myDragButton").prop("disabled", true);
+        }
     });
 }
 

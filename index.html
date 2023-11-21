@@ -23,7 +23,7 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-2">
+            <div class="col-md-2" id="myMenu">
                 <h1>Titre</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                     et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -37,8 +37,16 @@
                     </div>
                     <input type="submit">
                 </form>
-                <div id="draggable" class="ui-widget-content">
-                    <p>IUT</p>
+                <div id="myDragContainer">
+                    <div id="myDragSection">
+                        <div id="myDragLabel">Nom du lieu</div>
+                        <button id="myDragButton">Placer</button>
+                        <button id="myBtnDel">X</button>
+                        <div id="myDragItem" class="ui-widget-content">
+                            <p>Icon</p>
+                        </div>
+                    </div>
+                    <button id="myBtnAdd">Ajouter</button>
                 </div>
             </div>
             <div class="col-md-10">
