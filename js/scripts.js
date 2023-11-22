@@ -18,11 +18,6 @@ function init() {
 
 // ***************************** PARTIE POUR LES METROS - EYCI *****************************
 
-// Fonction pour formater un nombre avec deux chiffres
-function formatWithTwoDigits(number) {
-    return number < 10 ? '0' + number : number;
-}
-
 var listeArrets = [];
 var listeNomArrets = [];
 
@@ -105,8 +100,8 @@ async function affichage() {
     var dateGMT = new Date(ETA);
 
     // Obtenir les composants de la date et de l'heure
-    var heure = formatWithTwoDigits(dateGMT.getUTCHours()) + 1;
-    var minute = formatWithTwoDigits(dateGMT.getUTCMinutes());
+    var heure = dateGMT.getUTCHours() + 1;
+    var minute = dateGMT.getUTCMinutes();
 
     // Afficher l'heure française
     var heureFrancaise = heure + ':' + minute;
@@ -123,8 +118,8 @@ async function affichageNext() {
     var dateGMT = new Date(ETA);
 
     // Obtenir les composants de la date et de l'heure
-    var heure = formatWithTwoDigits(dateGMT.getUTCHours()) + 1;
-    var minute = formatWithTwoDigits(dateGMT.getUTCMinutes());
+    var heure = dateGMT.getUTCHours() + 1;
+    var minute = dateGMT.getUTCMinutes();
 
     // Afficher l'heure française
     var heureFrancaise = heure + ':' + minute;
