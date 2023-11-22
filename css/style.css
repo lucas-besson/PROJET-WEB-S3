@@ -1,12 +1,10 @@
 #map {
     height:100vh;
-<<<<<<< HEAD
+    z-index: 0;
 }
+
 p {
     text-align: justify;
-}
-=======
-    z-index: 0;
 }
 
 * { box-sizing: border-box; }
@@ -95,5 +93,8 @@ input[type=submit] {
   z-index: 2;
 }
 
+#myAvatar p{
+  margin-top: 8%;
+  text-align: center;
+}
 /* Fin du composant draggable */
->>>>>>> 26d77ef472e4685d0dd57c806e88b72de8fa27f1

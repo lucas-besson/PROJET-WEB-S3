@@ -3,11 +3,6 @@ const coordTourEffeil = [48.8584, 2.2945];
 const coordArcTriomphe = [48.87391868940699, 2.2950274969557416];
 addEventListener("load", init);
 
-var myDraggable = $("#myDragItem");
-var draggableLatLng;
-var myDraggableButton = $("#myDragButton");
-var newDrag = '<div id="myDragSection"> <div id="myDragLabel">Nom du lieu</div> <button id="myDragButton">Placer</button> <button id="myBtnDel">X</button> <div id="myDragItem" class="ui-widget-content"> <p>Icon</p> </div> </div>'
-
 function init() {
    
     var IUT_paris = new L.Marker([48.84222090637304, 2.267797611373178]).bindPopup('IUT Paris Rives de Seine');
@@ -62,6 +57,26 @@ function init() {
 
     autocomplete(document.getElementById("myInput"), listeNomArrets);
 
+    initDrag(map);
+    activerBtnDel();
+    document.getElementById("myBtnAdd").style.display = "none";
+
+    document.getElementById("myBtnAdd").addEventListener("click", function() {
+        var newDrag = document.createElement("div");
+        newDrag.id = "myDragSection";
+        newDrag.innerHTML = '<div id="myDragLabel">Avatar</div> <button id="myDragButton">Placer</button> <button id="myBtnDel">X</button> <div id="myDragItem" class="ui-widget-content"> <p>Icon</p> </div>';
+        document.getElementById("myDragContainer").appendChild(newDrag);
+        initDrag(map);
+        activerBtnDel();
+        document.getElementById("myBtnAdd").style.display = "none";
+    });
+}
+
+function initDrag(map){
+    var myDraggable = $("#myDragItem");
+    var draggableLatLng;
+    var myDraggableButton = $("#myDragButton");
+    
     myDraggableButton.prop("disabled", true);
 
     myDraggable.draggable({
@@ -92,6 +107,14 @@ function init() {
             myDraggableButton.text("Placer");            
             $("#myDragButton").prop("disabled", true);
         }
+    });
+}
+
+function activerBtnDel() {
+    document.getElementById("myBtnDel").addEventListener("click", function() {
+        var myDragContainer = document.getElementById("myDragContainer");
+        myDragContainer.innerHTML = '';
+        document.getElementById("myBtnAdd").style.display = "block";
     });
 }
 
@@ -168,8 +191,8 @@ async function request() {
 
 async function enregistrer(data) {
     api_response = data;
-    affichage();
-    affichageNext();
+    //affichage();
+    //affichageNext();
 }
 
 async function affichage() {
