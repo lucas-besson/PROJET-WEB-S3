@@ -1,18 +1,98 @@
+const coordParis = [48.8566, 2.3522];
+const coordTourEffeil = [48.8584, 2.2945];
+const coordArcTriomphe = [48.87391868940699, 2.2950274969557416];
 addEventListener("load", init);
 
-function init() {
-    var map = L.map('map').setView([48.866667, 2.333333], 13);
+var myDraggable = $("#myDragItem");
+var draggableLatLng;
+var myDraggableButton = $("#myDragButton");
+var newDrag = '<div id="myDragSection"> <div id="myDragLabel">Nom du lieu</div> <button id="myDragButton">Placer</button> <button id="myBtnDel">X</button> <div id="myDragItem" class="ui-widget-content"> <p>Icon</p> </div> </div>'
 
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+function init() {
+   
+    var IUT_paris = new L.Marker([48.84222090637304, 2.267797611373178]).bindPopup('IUT Paris Rives de Seine');
+    var chez_moi = new L.Marker([48.89230421741235, 2.2888199288353763]).bindPopup('Maison');
+    var Tour_effeil = L.marker(coordTourEffeil).bindPopup('Tour Effeil'),
+        Arc_triomphe = L.marker(coordArcTriomphe).bindPopup('Arc de Triomphe');
+    
+    var maison = L.layerGroup([chez_moi]);
+    var iut = L.layerGroup([IUT_paris]);
+    var monuments = L.layerGroup([Tour_effeil, Arc_triomphe]);
+
+    
+    var openTopoMap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-    }).addTo(map);
+        attribution: 'Map data: © OpenStreetMap contributors, SRTM | Map style: © OpenTopoMap (CC-BY-SA)'
+    });
+
+    var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '© OpenStreetMap'
+    });
+
+    var osmHOT = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '© OpenStreetMap contributors, Tiles style by Humanitarian OpenStreetMap Team hosted by OpenStreetMap France'
+    });
+
+    var baseMaps = {
+        "OpenStreetMap": osm,
+        "<span style='color: red'>OpenStreetMap.HOT</span>": osmHOT
+    };
+    
+    var overlayMaps = {
+        "Chez Moi": maison,
+        "Etude": iut
+    };
+
+    var map = L.map('map', {
+        center: coordParis,
+        zoom: 12,
+        layers: [osm, maison, iut]
+    });
+
+    var layerControl = L.control.layers(baseMaps, overlayMaps).addTo(map);
+  
+    layerControl.addBaseLayer(openTopoMap, "OpenTopoMap");
+    layerControl.addOverlay(monuments, "Monuments");
 
     getArrets();
 
     request();
 
     autocomplete(document.getElementById("myInput"), listeNomArrets);
+
+    myDraggableButton.prop("disabled", true);
+
+    myDraggable.draggable({
+        stop: function(event, ui) {
+            draggableLatLng = map.containerPointToLatLng(L.point(ui.position.left, ui.position.top));
+            myDraggable.data('latLng', draggableLatLng);
+            
+            myDraggableButton.text("Enregistrer");
+            myDraggableButton.prop("disabled", false);
+        },
+        containment: "#map", 
+        scroll: false
+    });
+
+    map.on('move zoomend', function(event) {
+        myDraggable.css({
+            top: map.latLngToContainerPoint(draggableLatLng).y + "px",
+            left: map.latLngToContainerPoint(draggableLatLng).x + "px"
+        });
+    });
+
+    myDraggableButton.on("click", function() {
+        if(myDraggableButton.text() === "Enregistrer"){
+            myDraggable.draggable("disable");
+            myDraggableButton.text("Modifier");
+        } else if(myDraggableButton.text() === "Modifier"){
+            myDraggable.draggable("enable");
+            myDraggableButton.text("Placer");            
+            $("#myDragButton").prop("disabled", true);
+        }
+    });
 }
 
 
