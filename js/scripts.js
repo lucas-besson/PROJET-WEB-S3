@@ -72,6 +72,30 @@ function init() {
     });
 }
 
+function recupStation(){
+    listtemp = [];
+    $.ajax({
+        type: "GET",
+        url: "./refs/arrets.json",
+        dataType: "json",
+        success: function(data) {
+            data.forEach(function(station) {
+                var latitud = station.arrgeopoint.lat;
+                var longitud = station.arrgeopoint.lon;
+                L.marker([latitud, longitud]).bindPopup(station.arrname);
+                console.log("je passe ici !");
+                // listtemp.push(marker);
+                console.log("je passe ici 2 !");
+            });
+            console.log(listtemp);
+            // L.layerGroup(listtemp);
+        },
+        error: function(error) {
+            console.error(error);
+        }
+    });
+}
+
 function initDrag(map){
     var myDraggable = $("#myDragItem");
     var draggableLatLng;
