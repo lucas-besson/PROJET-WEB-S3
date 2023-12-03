@@ -9,7 +9,7 @@ function init() {
     var chez_moi = new L.Marker([48.89230421741235, 2.2888199288353763]).bindPopup('Maison');
     var Tour_effeil = L.marker(coordTourEffeil).bindPopup('Tour Effeil'),
         Arc_triomphe = L.marker(coordArcTriomphe).bindPopup('Arc de Triomphe');
-    
+
     var maison = L.layerGroup([chez_moi]);
     var iut = L.layerGroup([IUT_paris]);
     var monuments = L.layerGroup([Tour_effeil, Arc_triomphe]);
@@ -46,6 +46,8 @@ function init() {
         layers: [osm, maison, iut]
     });
 
+    recupStation(map);
+
     var layerControl = L.control.layers(baseMaps, overlayMaps).addTo(map);
   
     layerControl.addBaseLayer(openTopoMap, "OpenTopoMap");
@@ -72,8 +74,7 @@ function init() {
     });
 }
 
-function recupStation(){
-    listtemp = [];
+function recupStation(map) {
     $.ajax({
         type: "GET",
         url: "./refs/arrets.json",
@@ -82,19 +83,16 @@ function recupStation(){
             data.forEach(function(station) {
                 var latitud = station.arrgeopoint.lat;
                 var longitud = station.arrgeopoint.lon;
-                L.marker([latitud, longitud]).bindPopup(station.arrname);
-                console.log("je passe ici !");
-                // listtemp.push(marker);
-                console.log("je passe ici 2 !");
+                var marker = L.marker([latitud, longitud]).bindPopup(station.arrname);
+                marker.addTo(map);
             });
-            console.log(listtemp);
-            // L.layerGroup(listtemp);
         },
         error: function(error) {
             console.error(error);
         }
     });
 }
+
 
 function initDrag(map){
     var myDraggable = $("#myDragItem");
