@@ -4,7 +4,7 @@ const coordArcTriomphe = [48.87391868940699, 2.2950274969557416];
 addEventListener("load", init);
 
 function init() {
-   
+
     var IUT_paris = new L.Marker([48.84222090637304, 2.267797611373178]).bindPopup('IUT Paris Rives de Seine');
     var chez_moi = new L.Marker([48.89230421741235, 2.2888199288353763]).bindPopup('Maison');
     var Tour_effeil = L.marker(coordTourEffeil).bindPopup('Tour Effeil'),
@@ -14,7 +14,7 @@ function init() {
     var iut = L.layerGroup([IUT_paris]);
     var monuments = L.layerGroup([Tour_effeil, Arc_triomphe]);
 
-    
+
     var openTopoMap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
         attribution: 'Map data: © OpenStreetMap contributors, SRTM | Map style: © OpenTopoMap (CC-BY-SA)'
@@ -34,7 +34,7 @@ function init() {
         "OpenStreetMap": osm,
         "<span style='color: red'>OpenStreetMap.HOT</span>": osmHOT
     };
-    
+
     var overlayMaps = {
         "Chez Moi": maison,
         "Etude": iut
@@ -49,13 +49,11 @@ function init() {
     recupStation(map);
 
     var layerControl = L.control.layers(baseMaps, overlayMaps).addTo(map);
-  
+
     layerControl.addBaseLayer(openTopoMap, "OpenTopoMap");
     layerControl.addOverlay(monuments, "Monuments");
 
     getArrets();
-
-    request();
 
     autocomplete(document.getElementById("myInput"), listeNomArrets);
 
@@ -63,7 +61,7 @@ function init() {
     activerBtnDel();
     document.getElementById("myBtnAdd").style.display = "none";
 
-    document.getElementById("myBtnAdd").addEventListener("click", function() {
+    document.getElementById("myBtnAdd").addEventListener("click", function () {
         var newDrag = document.createElement("div");
         newDrag.id = "myDragSection";
         newDrag.innerHTML = '<div id="myDragLabel">Avatar</div> <button id="myDragButton">Placer</button> <button id="myBtnDel">X</button> <div id="myDragItem" class="ui-widget-content"> <p>Icon</p> </div>';
@@ -79,61 +77,64 @@ function recupStation(map) {
         type: "GET",
         url: "./refs/arrets.json",
         dataType: "json",
-        success: function(data) {
-            data.forEach(function(station) {
+        success: function (data) {
+            data.forEach(function (station) {
                 var latitud = station.arrgeopoint.lat;
                 var longitud = station.arrgeopoint.lon;
-                var marker = L.marker([latitud, longitud]).bindPopup(station.arrname);
+                // FONCTION ARRETS
+                //console.log(horaires(station));
+                var marker = L.marker([latitud, longitud]).bindPopup(station.arrname + "\n" + String(horaires(station)));
+                //var marker = L.marker([latitud, longitud]).bindPopup(station.arrname);
                 marker.addTo(map);
             });
         },
-        error: function(error) {
+        error: function (error) {
             console.error(error);
         }
     });
 }
 
 
-function initDrag(map){
+function initDrag(map) {
     var myDraggable = $("#myDragItem");
     var draggableLatLng;
     var myDraggableButton = $("#myDragButton");
-    
+
     myDraggableButton.prop("disabled", true);
 
     myDraggable.draggable({
-        stop: function(event, ui) {
+        stop: function (event, ui) {
             draggableLatLng = map.containerPointToLatLng(L.point(ui.position.left, ui.position.top));
             myDraggable.data('latLng', draggableLatLng);
-            
+
             myDraggableButton.text("Enregistrer");
             myDraggableButton.prop("disabled", false);
         },
-        containment: "#map", 
+        containment: "#map",
         scroll: false
     });
 
-    map.on('move zoomend', function(event) {
+    map.on('move zoomend', function (event) {
         myDraggable.css({
             top: map.latLngToContainerPoint(draggableLatLng).y + "px",
             left: map.latLngToContainerPoint(draggableLatLng).x + "px"
         });
     });
 
-    myDraggableButton.on("click", function() {
-        if(myDraggableButton.text() === "Enregistrer"){
+    myDraggableButton.on("click", function () {
+        if (myDraggableButton.text() === "Enregistrer") {
             myDraggable.draggable("disable");
             myDraggableButton.text("Modifier");
-        } else if(myDraggableButton.text() === "Modifier"){
+        } else if (myDraggableButton.text() === "Modifier") {
             myDraggable.draggable("enable");
-            myDraggableButton.text("Placer");            
+            myDraggableButton.text("Placer");
             $("#myDragButton").prop("disabled", true);
         }
     });
 }
 
 function activerBtnDel() {
-    document.getElementById("myBtnDel").addEventListener("click", function() {
+    document.getElementById("myBtnDel").addEventListener("click", function () {
         var myDragContainer = document.getElementById("myDragContainer");
         myDragContainer.innerHTML = '';
         document.getElementById("myBtnAdd").style.display = "block";
@@ -143,10 +144,114 @@ function activerBtnDel() {
 
 // ***************************** PARTIE POUR LES METROS - EYCI *****************************
 
+function horaires(station) {
+
+    var horaire = '';
+
+    var stationID = station.arrid;
+
+    var traffic_url = 'https://prim.iledefrance-mobilites.fr/marketplace/stop-monitoring?MonitoringRef=STIF%3AStopPoint%3AQ%3A' + stationID + '%3A';
+
+    var token = 'nYRgohLx6OwxTpsgS4oCyAyxWZn4wQdT';
+
+    const headers = {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Apikey': token,
+    };
+
+    async function save(data2) {
+        horaire = data2;
+    }
+
+    // Make a GET request with headers
+    fetch(traffic_url, {
+        method: 'GET',
+        headers: headers,
+    })
+        .then(response => response.json())
+        .then(data => {
+            // console.log(data.Siri.ServiceDelivery.StopMonitoringDelivery[0].MonitoredStopVisit[0].MonitoredVehicleJourney.MonitoredCall.ExpectedArrivalTime);
+            // save(data.Siri.ServiceDelivery.StopMonitoringDelivery[0].MonitoredStopVisit[0].MonitoredVehicleJourney.MonitoredCall.ExpectedArrivalTime);
+            return data.Siri.ServiceDelivery.StopMonitoringDelivery[0].MonitoredStopVisit[0].MonitoredVehicleJourney.MonitoredCall.ExpectedArrivalTime;
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+}
+
+// function request(stationID) {
+//     var traffic_url = 'https://prim.iledefrance-mobilites.fr/marketplace/stop-monitoring?MonitoringRef=STIF%3AStopPoint%3AQ%3A' + stationID + '%3A';
+
+//     var token = 'nYRgohLx6OwxTpsgS4oCyAyxWZn4wQdT';
+
+//     const headers = {
+//         'Content-Type': 'application/json',
+//         'Accept': 'application/json',
+//         'Apikey': token,
+//     };
+
+
+//     // Make a GET request with headers
+//     fetch(traffic_url, {
+//         method: 'GET',
+//         headers: headers,
+//     })
+//         .then(response => response.json())
+//         .then(data => {
+
+//             enregistrer(data);
+
+//         })
+//         .catch(error => {
+//             console.error('Error:', error);
+//         });
+
+
+//     // Chemin : data.Siri.ServiceDelivery.StopMonitoringDelivery[0].MonitoredStopVisit[0].MonitoredVehicleJourney.MonitoredCall.ExpectedArrivalTime
+
+//     return enregistrer();
+// }
+
+// function enregistrer(data) {
+//     api_response = data;
+//     return affichage() + affichageNext();
+// }
+
+// function affichage() {
+//     var ETA = api_response.Siri.ServiceDelivery.StopMonitoringDelivery[0].MonitoredStopVisit[0].MonitoredVehicleJourney.MonitoredCall.ExpectedArrivalTime;
+
+//     // Date au format GMT
+//     var dateGMT = new Date(ETA);
+
+//     // Obtenir les composants de la date et de l'heure
+//     var heure = dateGMT.getUTCHours() + 1;
+//     var minute = dateGMT.getUTCMinutes();
+
+//     // Afficher l'heure française
+//     var heureFrancaise = heure + ':' + minute;
+//     return "Prochain train à " + heureFrancaise;
+// }
+
+// function affichageNext() {
+//     var ETA = api_response.Siri.ServiceDelivery.StopMonitoringDelivery[0].MonitoredStopVisit[1].MonitoredVehicleJourney.MonitoredCall.ExpectedArrivalTime;
+
+//     // Date au format GMT
+//     var dateGMT = new Date(ETA);
+
+//     // Obtenir les composants de la date et de l'heure
+//     var heure = dateGMT.getUTCHours() + 1;
+//     var minute = dateGMT.getUTCMinutes();
+
+//     // Afficher l'heure française
+//     var heureFrancaise = heure + ':' + minute;
+//     return "Le suivant à " + heureFrancaise;
+// }
+
 var listeArrets = [];
 var listeNomArrets = [];
 
-async function getArrets() {
+function getArrets() {
 
     // URL du fichier JSON externe
     var jsonFileUrl = '../refs/arrets.json';
@@ -175,82 +280,7 @@ async function getArrets() {
         });
 }
 
-var api_response = '';
 
-var stationID = '21908';
-
-async function request() {
-    var traffic_url = 'https://prim.iledefrance-mobilites.fr/marketplace/stop-monitoring?MonitoringRef=STIF%3AStopPoint%3AQ%3A' + stationID + '%3A';
-
-    var token = 'nYRgohLx6OwxTpsgS4oCyAyxWZn4wQdT';
-
-
-
-    const headers = {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-        'Apikey': token,
-    };
-
-
-    // Make a GET request with headers
-    fetch(traffic_url, {
-        method: 'GET',
-        headers: headers,
-    })
-        .then(response => response.json())
-        .then(data => {
-
-            enregistrer(data);
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
-
-
-    // Chemin : data.Siri.ServiceDelivery.StopMonitoringDelivery[0].MonitoredStopVisit[0].MonitoredVehicleJourney.MonitoredCall.ExpectedArrivalTime
-}
-
-async function enregistrer(data) {
-    api_response = data;
-    //affichage();
-    //affichageNext();
-}
-
-async function affichage() {
-    var nomArret = api_response.Siri.ServiceDelivery.StopMonitoringDelivery[0].MonitoredStopVisit[0].MonitoredVehicleJourney.MonitoredCall.StopPointName[0].value;
-    var ETA = api_response.Siri.ServiceDelivery.StopMonitoringDelivery[0].MonitoredStopVisit[0].MonitoredVehicleJourney.MonitoredCall.ExpectedArrivalTime;
-
-    // Date au format GMT
-    var dateGMT = new Date(ETA);
-
-    // Obtenir les composants de la date et de l'heure
-    var heure = dateGMT.getUTCHours() + 1;
-    var minute = dateGMT.getUTCMinutes();
-
-    // Afficher l'heure française
-    var heureFrancaise = heure + ':' + minute;
-
-    alert(nomArret);
-    alert("Prochain train à " + heureFrancaise);
-}
-
-async function affichageNext() {
-    var nomArret = api_response.Siri.ServiceDelivery.StopMonitoringDelivery[0].MonitoredStopVisit[1].MonitoredVehicleJourney.MonitoredCall.StopPointName[0].value;
-    var ETA = api_response.Siri.ServiceDelivery.StopMonitoringDelivery[0].MonitoredStopVisit[1].MonitoredVehicleJourney.MonitoredCall.ExpectedArrivalTime;
-
-    // Date au format GMT
-    var dateGMT = new Date(ETA);
-
-    // Obtenir les composants de la date et de l'heure
-    var heure = dateGMT.getUTCHours() + 1;
-    var minute = dateGMT.getUTCMinutes();
-
-    // Afficher l'heure française
-    var heureFrancaise = heure + ':' + minute;
-
-    alert("Le suivant à " + heureFrancaise);
-}
 
 function autocomplete(inp, arr) {
     /*the autocomplete function takes two arguments,
