@@ -11,13 +11,13 @@ function recupStation(map) {
         success: function (data) {
             // Utiliser map pour créer un tableau de Promises
             var promises = data.map(async function (station) {
-                var latitud = station.arrgeopoint.lat;
-                var longitud = station.arrgeopoint.lon;
+                var latitud = station.pointgeo.lat;
+                var longitud = station.pointgeo.lon;
 
                 // Attendre que la Promise soit résolue
 
                 var horaire_dest = ['', ''];
-
+                
                 horaire_dest = await horaires(station);
 
                 var horaire = horaire_dest[0];
@@ -26,7 +26,8 @@ function recupStation(map) {
 
                 horaire = refactorDate(horaire);
 
-                var marker = L.marker([latitud, longitud]).bindPopup(station.arrname + "<br\>En destination de : " + dest + "<br\>Prochain métro à : " + horaire);
+                var marker = L.marker([latitud, longitud]).bindPopup(station.stop_name + "<br\>En destination de : " + dest + "<br\>Prochain métro à : " + horaire);
+                //var marker = L.marker([latitud, longitud]).bindPopup(station.stop_name);
 
                 marker.addTo(map);
             });
@@ -164,6 +165,14 @@ function activerBtnDel() {
     });
 }
 
+function extraireNumerosStopId(stopId) {
+    // Utilisation d'une expression régulière pour extraire les numéros
+    const numeros = stopId.match(/\d+/);
+  
+    // Si des numéros sont trouvés, renvoyer le premier numéro trouvé
+    // Sinon, renvoyer null ou une valeur par défaut selon vos besoins
+    return numeros ? numeros[0] : null;
+  }
 
 // ***************************** PARTIE POUR LES METROS - EYCI *****************************
 
@@ -172,7 +181,10 @@ var horaire = '';
 function horaires(station) {
 
 
-    var stationID = station.arrid;
+    var stationID = station.stop_id;
+
+    console.log(stationID);
+    stationID = extraireNumerosStopId(stationID);
 
     var traffic_url = 'https://prim.iledefrance-mobilites.fr/marketplace/stop-monitoring?MonitoringRef=STIF%3AStopPoint%3AQ%3A' + stationID + '%3A';
 
@@ -344,7 +356,3 @@ function autocomplete(inp, arr) {
         closeAllLists(e.target);
     });
 }
-
-$(document).ready(function () {
-    
-});
