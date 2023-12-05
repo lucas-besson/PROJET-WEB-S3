@@ -344,7 +344,3 @@ function autocomplete(inp, arr) {
         closeAllLists(e.target);
     });
 }
-
-$(document).ready(function () {
-    
-});
