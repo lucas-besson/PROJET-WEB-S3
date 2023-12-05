@@ -15,19 +15,18 @@ function recupStation(map) {
                 var longitud = station.arrgeopoint.lon;
 
                 // Attendre que la Promise soit résolue
-                var horaire = await horaires(station);
 
-                // Date au format GMT
-                var dateGMT = new Date(horaire);
+                var horaire_dest = ['', ''];
 
-                // Obtenir les composants de la date et de l'heure
-                var heure = dateGMT.getUTCHours() + 1;
-                var minute = dateGMT.getUTCMinutes();
+                horaire_dest = await horaires(station);
 
-                // Formater l'heure et les minutes avec un zéro devant les chiffres uniques
-                var heureFrancaise = heure + ':' + (minute < 10 ? '0' : '') + minute;
+                var horaire = horaire_dest[0];
 
-                var marker = L.marker([latitud, longitud]).bindPopup(station.arrname + "<br\> Prochain Train à : " + heureFrancaise);
+                var dest = horaire_dest[1];
+
+                horaire = refactorDate(horaire);
+
+                var marker = L.marker([latitud, longitud]).bindPopup(station.arrname + "<br\>En destination de : " + dest + "<br\>Prochain métro à : " + horaire);
 
                 marker.addTo(map);
             });
@@ -192,7 +191,7 @@ function horaires(station) {
     })
         .then(response => response.json())
         .then(data => {
-            return data.Siri.ServiceDelivery.StopMonitoringDelivery[0].MonitoredStopVisit[0].MonitoredVehicleJourney.MonitoredCall.ExpectedArrivalTime;
+            return [data.Siri.ServiceDelivery.StopMonitoringDelivery[0].MonitoredStopVisit[0].MonitoredVehicleJourney.MonitoredCall.ExpectedArrivalTime, data.Siri.ServiceDelivery.StopMonitoringDelivery[0].MonitoredStopVisit[0].MonitoredVehicleJourney.DestinationName[0].value];
         })
         .catch(error => {
             console.error('Error:', error);
@@ -200,73 +199,20 @@ function horaires(station) {
         });
 }
 
-// function request(stationID) {
-//     var traffic_url = 'https://prim.iledefrance-mobilites.fr/marketplace/stop-monitoring?MonitoringRef=STIF%3AStopPoint%3AQ%3A' + stationID + '%3A';
-
-//     var token = 'nYRgohLx6OwxTpsgS4oCyAyxWZn4wQdT';
-
-//     const headers = {
-//         'Content-Type': 'application/json',
-//         'Accept': 'application/json',
-//         'Apikey': token,
-//     };
 
 
-//     // Make a GET request with headers
-//     fetch(traffic_url, {
-//         method: 'GET',
-//         headers: headers,
-//     })
-//         .then(response => response.json())
-//         .then(data => {
-
-//             enregistrer(data);
-
-//         })
-//         .catch(error => {
-//             console.error('Error:', error);
-//         });
-
-
-//     // Chemin : data.Siri.ServiceDelivery.StopMonitoringDelivery[0].MonitoredStopVisit[0].MonitoredVehicleJourney.MonitoredCall.ExpectedArrivalTime
-
-//     return enregistrer();
-// }
-
-// function enregistrer(data) {
-//     api_response = data;
-//     return affichage() + affichageNext();
-// }
-
-function affichage() {
-    var ETA = api_response.Siri.ServiceDelivery.StopMonitoringDelivery[0].MonitoredStopVisit[0].MonitoredVehicleJourney.MonitoredCall.ExpectedArrivalTime;
-
+function refactorDate(horaire) {
     // Date au format GMT
-    var dateGMT = new Date(ETA);
+    var dateGMT = new Date(horaire);
 
     // Obtenir les composants de la date et de l'heure
     var heure = dateGMT.getUTCHours() + 1;
     var minute = dateGMT.getUTCMinutes();
 
-    // Afficher l'heure française
-    var heureFrancaise = heure + ':' + minute;
-    return "Prochain train à " + heureFrancaise;
+    // Formater l'heure et les minutes avec un zéro devant les chiffres uniques
+    var heureFrancaise = heure + ':' + (minute < 10 ? '0' : '') + minute;
+    return heureFrancaise;
 }
-
-// function affichageNext() {
-//     var ETA = api_response.Siri.ServiceDelivery.StopMonitoringDelivery[0].MonitoredStopVisit[1].MonitoredVehicleJourney.MonitoredCall.ExpectedArrivalTime;
-
-//     // Date au format GMT
-//     var dateGMT = new Date(ETA);
-
-//     // Obtenir les composants de la date et de l'heure
-//     var heure = dateGMT.getUTCHours() + 1;
-//     var minute = dateGMT.getUTCMinutes();
-
-//     // Afficher l'heure française
-//     var heureFrancaise = heure + ':' + minute;
-//     return "Le suivant à " + heureFrancaise;
-// }
 
 var listeArrets = [];
 var listeNomArrets = [];
