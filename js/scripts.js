@@ -3,6 +3,50 @@ const coordTourEffeil = [48.8584, 2.2945];
 const coordArcTriomphe = [48.87391868940699, 2.2950274969557416];
 addEventListener("load", init);
 
+function recupStation(map) {
+    $.ajax({
+        type: "GET",
+        url: "./refs/arrets.json",
+        dataType: "json",
+        success: function (data) {
+            // Utiliser map pour créer un tableau de Promises
+            var promises = data.map(async function (station) {
+                var latitud = station.arrgeopoint.lat;
+                var longitud = station.arrgeopoint.lon;
+
+                // Attendre que la Promise soit résolue
+                var horaire = await horaires(station);
+
+                // Date au format GMT
+                var dateGMT = new Date(horaire);
+
+                // Obtenir les composants de la date et de l'heure
+                var heure = dateGMT.getUTCHours() + 1;
+                var minute = dateGMT.getUTCMinutes();
+
+                // Formater l'heure et les minutes avec un zéro devant les chiffres uniques
+                var heureFrancaise = heure + ':' + (minute < 10 ? '0' : '') + minute;
+
+                var marker = L.marker([latitud, longitud]).bindPopup(station.arrname + "<br\> Prochain Train à : " + heureFrancaise);
+
+                marker.addTo(map);
+            });
+
+            // Utiliser Promise.all pour attendre que toutes les Promises soient résolues
+            Promise.all(promises)
+                .then(() => {
+                    console.log("Tous les horaires ont été résolus.");
+                })
+                .catch(error => {
+                    console.error('Erreur lors de la résolution des horaires:', error);
+                });
+        },
+        error: function (error) {
+            console.error(error);
+        }
+    });
+}
+
 function init() {
 
     var IUT_paris = new L.Marker([48.84222090637304, 2.267797611373178]).bindPopup('IUT Paris Rives de Seine');
@@ -72,27 +116,7 @@ function init() {
     });
 }
 
-function recupStation(map) {
-    $.ajax({
-        type: "GET",
-        url: "./refs/arrets.json",
-        dataType: "json",
-        success: function (data) {
-            data.forEach(function (station) {
-                var latitud = station.arrgeopoint.lat;
-                var longitud = station.arrgeopoint.lon;
-                // FONCTION ARRETS
-                //console.log(horaires(station));
-                var marker = L.marker([latitud, longitud]).bindPopup(station.arrname + "\n" + String(horaires(station)));
-                //var marker = L.marker([latitud, longitud]).bindPopup(station.arrname);
-                marker.addTo(map);
-            });
-        },
-        error: function (error) {
-            console.error(error);
-        }
-    });
-}
+
 
 
 function initDrag(map) {
@@ -144,9 +168,10 @@ function activerBtnDel() {
 
 // ***************************** PARTIE POUR LES METROS - EYCI *****************************
 
+var horaire = '';
+
 function horaires(station) {
 
-    var horaire = '';
 
     var stationID = station.arrid;
 
@@ -160,23 +185,18 @@ function horaires(station) {
         'Apikey': token,
     };
 
-    async function save(data2) {
-        horaire = data2;
-    }
-
-    // Make a GET request with headers
-    fetch(traffic_url, {
+    // Return the promise directly
+    return fetch(traffic_url, {
         method: 'GET',
         headers: headers,
     })
         .then(response => response.json())
         .then(data => {
-            // console.log(data.Siri.ServiceDelivery.StopMonitoringDelivery[0].MonitoredStopVisit[0].MonitoredVehicleJourney.MonitoredCall.ExpectedArrivalTime);
-            // save(data.Siri.ServiceDelivery.StopMonitoringDelivery[0].MonitoredStopVisit[0].MonitoredVehicleJourney.MonitoredCall.ExpectedArrivalTime);
             return data.Siri.ServiceDelivery.StopMonitoringDelivery[0].MonitoredStopVisit[0].MonitoredVehicleJourney.MonitoredCall.ExpectedArrivalTime;
         })
         .catch(error => {
             console.error('Error:', error);
+            throw error; // rethrow the error to be caught by the caller
         });
 }
 
@@ -218,20 +238,20 @@ function horaires(station) {
 //     return affichage() + affichageNext();
 // }
 
-// function affichage() {
-//     var ETA = api_response.Siri.ServiceDelivery.StopMonitoringDelivery[0].MonitoredStopVisit[0].MonitoredVehicleJourney.MonitoredCall.ExpectedArrivalTime;
+function affichage() {
+    var ETA = api_response.Siri.ServiceDelivery.StopMonitoringDelivery[0].MonitoredStopVisit[0].MonitoredVehicleJourney.MonitoredCall.ExpectedArrivalTime;
 
-//     // Date au format GMT
-//     var dateGMT = new Date(ETA);
+    // Date au format GMT
+    var dateGMT = new Date(ETA);
 
-//     // Obtenir les composants de la date et de l'heure
-//     var heure = dateGMT.getUTCHours() + 1;
-//     var minute = dateGMT.getUTCMinutes();
+    // Obtenir les composants de la date et de l'heure
+    var heure = dateGMT.getUTCHours() + 1;
+    var minute = dateGMT.getUTCMinutes();
 
-//     // Afficher l'heure française
-//     var heureFrancaise = heure + ':' + minute;
-//     return "Prochain train à " + heureFrancaise;
-// }
+    // Afficher l'heure française
+    var heureFrancaise = heure + ':' + minute;
+    return "Prochain train à " + heureFrancaise;
+}
 
 // function affichageNext() {
 //     var ETA = api_response.Siri.ServiceDelivery.StopMonitoringDelivery[0].MonitoredStopVisit[1].MonitoredVehicleJourney.MonitoredCall.ExpectedArrivalTime;
@@ -378,3 +398,7 @@ function autocomplete(inp, arr) {
         closeAllLists(e.target);
     });
 }
+
+$(document).ready(function () {
+    
+});
