@@ -1,21 +1,23 @@
 <?php
-require_once('./models/dbConnect.php');
+require_once('../models/dbConnect.php');
 
 function getUserWithHisPassword(string $userMail): array
 {
     $DB = connectToDB();
     $query = $DB->prepare(
-        /* Mettre la requêtes*/
+        "SELECT * FROM utilisateur"
     );
-    $query->execute([$userMail]);
+    $query->execute();
+
     
     $user = [];
-    $row = $query->fetch()
+    $row = $query->fetch();
     $user = [
         'userLogin'=>$row['login'],
         'userMail'=>$row['email'],
         'userPassword'=>$row['password'],
         'isEnable'=>$row['isEnable']
     ];
+    var_dump($user);
     return $user;
 }
