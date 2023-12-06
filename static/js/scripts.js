@@ -6,7 +6,7 @@ addEventListener("load", init);
 function recupStation(map) {
     $.ajax({
         type: "GET",
-        url: "./refs/arrets.json",
+        url: "../static/refs/arrets.json",
         dataType: "json",
         success: function (data) {
             // Utiliser map pour créer un tableau de Promises
