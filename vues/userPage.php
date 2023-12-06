@@ -1,3 +1,3 @@
 <?php
-    echo "Coucou";
+    echo($user);
 

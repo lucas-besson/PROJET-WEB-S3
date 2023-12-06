@@ -1,5 +1,5 @@
 <?php
-require_once('../models/dbConnect.php');
+require_once('models/dbConnect.php');
 
 function getUserWithHisPassword(string $userMail): array
 {
@@ -18,6 +18,6 @@ function getUserWithHisPassword(string $userMail): array
         'userPassword'=>$row['password'],
         'isEnable'=>$row['isEnable']
     ];
-    var_dump($user);
+    echo($user);
     return $user;
 }
