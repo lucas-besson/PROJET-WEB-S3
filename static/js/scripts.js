@@ -6,7 +6,7 @@ addEventListener("load", init);
 function recupStation(map) {
     $.ajax({
         type: "GET",
-        url: "../static/refs/arrets.json",
+        url: "./static/refs/arrets.json",
         dataType: "json",
         success: function (data) {
             // Utiliser map pour créer un tableau de Promises
@@ -232,7 +232,7 @@ var listeNomArrets = [];
 function getArrets() {
 
     // URL du fichier JSON externe
-    var jsonFileUrl = '../refs/arrets.json';
+    var jsonFileUrl = './static/refs/arrets.json';
 
     // Utilisation de fetch pour récupérer le fichier JSON
     fetch(jsonFileUrl)

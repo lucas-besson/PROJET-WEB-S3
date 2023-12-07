@@ -3,6 +3,6 @@ require_once('models/authentification.php');
 
 function userPage(string $userMail, string $userPsw){
     $myUser = getUserWithHisPassword($user);
-    /* vérifier mo de passe utilisateur*/
+    /* vérifier mot de passe utilisateur*/
     require('vues/userPage.php');
 }
