@@ -4,8 +4,8 @@ require_once('controllers/connexion.php');
 require_once('controllers/home.php');
 
 try{
-    if (isset($_GET['connexion']) && $_GET['userMail'] !== '') {
-        userPage($_GET['userMail']);
+    if (isset($_GET['action']) == 'connexion') {
+            userPage($_GET['userMail'],$_GET['userPassword']);
     } else {
         homePage();
     }
