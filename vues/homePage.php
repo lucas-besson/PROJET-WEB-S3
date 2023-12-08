@@ -2,14 +2,14 @@
 
 <?php ob_start(); ?>
 <h1>Page Home</h1>
-    <form action="index.php?action=connexion" method="get">
+    <form action="index.php" method="post">
         <div class="form-group">
             <label for="userMail">Identifiant</label>
-            <input type="email" class="form-control" id="userMail" aria-describedby="emailHelp" placeholder="dupont@gmail.com">
+            <input type="email" class="form-control" name="userMail" aria-describedby="emailHelp" placeholder="dupont@gmail.com">
         </div>
         <div class="form-group">
             <label for="userPassword">Mot de passe</label>
-            <input type="password" class="form-control" id="userPassword" placeholder="Mot de passe">
+            <input type="password" class="form-control" name="userPassword" placeholder="Mot de passe">
         </div>
         <button type="submit" class="btn btn-primary">Valider</button>
     </form>
