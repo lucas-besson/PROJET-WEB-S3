@@ -9,5 +9,5 @@ function connectToDB(): PDO
     } catch (Exception $e) {
        die('Erreur : '.$e->getMessage());
     } 
-    return $DB;
+    return $DB;//
 }
