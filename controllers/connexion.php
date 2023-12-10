@@ -2,14 +2,11 @@
 require_once('models/authentification.php');
 
 function userPage(string $userMail, string $userPsw){
-    $myUser = getUserWithHisPassword();
-    var_dump($userMail);
-    var_dump($userPsw);
+    $myUser = getUserWithHisPassword($userMail);
     if ($myUser['userMail']== $userMail && $myUser['userPassword']== $userPsw){
+        $favs = getUserFavorite($userMail);
         require('vues/userPage.php');
     }
-
-    /* vérifier mot de passe utilisateur*/
     require('vues/homePage.php');
 }
 
