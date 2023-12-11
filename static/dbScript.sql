@@ -44,3 +44,9 @@ FROM utilisateur U
 INNER JOIN favoris F ON F.idUtilisateurFav = U.id_utilisateur
 INNER JOIN gare G ON G.idGare = F.idGareFav
 WHERE u.id_utilisateur = 1;
+
+SELECT G.nomGare, U.userLogin, U.userMail
+FROM utilisateur U
+         INNER JOIN favoris F ON F.idUtilisateurFav = U.id_utilisateur
+         INNER JOIN gare G ON G.idGare = F.idGareFav
+WHERE userMail LIKE 'client@client.fr';

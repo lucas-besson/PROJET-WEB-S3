@@ -10,7 +10,8 @@ p {
 * { box-sizing: border-box; }
 
 body {
-  font: 16px Arial;
+  letter-spacing: -1px;
+  font-family: 'segoe ui';
 }
 
 .autocomplete {
@@ -98,3 +99,19 @@ input[type=submit] {
   text-align: center;
 }
 /* Fin du composant draggable */
+/* Page utilisateur */
+h2 {
+  text-align: center;
+  margin: 0.5em;
+}
+
+label {
+  margin: 1.5em 1em 0.5em 0.5em;
+}
+ button[type=submit]{
+   margin: 1em 0em 1em 7em;
+ }
+
+button[type=button]{
+  margin-left:5em;
+}

@@ -1,7 +1,7 @@
-<?php $title="test"; ?>
+<?php $title="home"; ?>
 
 <?php ob_start(); ?>
-<h1>Page Home</h1>
+<h2>Bienvenue</h2>
     <form action="index.php" method="post">
         <div class="form-group">
             <label for="userMail">Identifiant</label>

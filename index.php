@@ -10,7 +10,7 @@ userPage($userMail,$userPassword);
 session_destroy();*/
 
 try{
-    if (isset($_POST['userMail']) && isset($_POST['userPassword'])) {
+    if (isset($_POST['userMail']) && isset($_POST['userPassword']) && $_POST['userMail'] && $_POST['userPassword'] ) {
             userPage($_POST['userMail'],$_POST['userPassword']);
     } else {
         homePage();

@@ -1,4 +1,4 @@
-<?php $title="test"; ?>
+<?php $title=$myUser['userName']; ?>
 
 <?php ob_start(); ?>
     <h2>Bienvenue <?= $myUser['userName'] ?></h2>
@@ -18,7 +18,7 @@
         </tbody>
     </table>
 
-    <button  type="button" class="btn btn-light" onclick="window.location.href='index.php';">Déconnexion</button>
+    <button type="button" class="btn btn-light" onclick="window.location.href='index.php';">Déconnexion</button>
 
 <?php $content = ob_get_clean(); ?>
 <?php require('./vues/layout.php') ?>

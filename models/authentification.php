@@ -7,8 +7,7 @@ function getUserWithHisPassword($userMail): array
     $query = $DB->prepare(
         "SELECT * 
                 FROM utilisateur
-                WHERE userMail LIKE ?
-                LIMIT 1;"
+                WHERE userMail = ?;"
     );
     $query->execute([$userMail]);
     $row = $query->fetch();
@@ -22,17 +21,17 @@ function getUserWithHisPassword($userMail): array
     return $user;
 }
 
-function getUserFavorite($userMail) : array
+function getUserFavorite($id) : array
 {
     $DB = connectToDB();
     $query = $DB->prepare(
-        "SELECT G.nomGare, U.userLogin, U.userMail
+        "SELECT G.nomGare, U.userLogin, U.id_utilisateur
                 FROM utilisateur U
                 INNER JOIN favoris F ON F.idUtilisateurFav = U.id_utilisateur
                 INNER JOIN gare G ON G.idGare = F.idGareFav
-                WHERE U.userMail LIKE ? ;"
+                WHERE id_utilisateur = ? ;"
     );
-    $query->execute([$userMail]);
+    $query->execute([$id]);
     $favoris = [];
     while ($row = $query->fetch()) {
         $fav = [
