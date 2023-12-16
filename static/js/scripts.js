@@ -3,48 +3,48 @@ const coordTourEffeil = [48.8584, 2.2945];
 const coordArcTriomphe = [48.87391868940699, 2.2950274969557416];
 addEventListener("load", init);
 
+
 function recupStation(map) {
-    $.ajax({
-        type: "GET",
-        url: "./static/refs/arrets.json",
-        dataType: "json",
-        success: function (data) {
-            // Utiliser map pour créer un tableau de Promises
-            var promises = data.map(async function (station) {
-                var latitud = station.pointgeo.lat;
-                var longitud = station.pointgeo.lon;
-
-                // Attendre que la Promise soit résolue
-
-                var horaire_dest = ['', ''];
-                
-                horaire_dest = await horaires(station);
-
-                var horaire = horaire_dest[0];
-
-                var dest = horaire_dest[1];
-
-                horaire = refactorDate(horaire);
-
-                var marker = L.marker([latitud, longitud]).bindPopup(station.stop_name + "<br\>En destination de : " + dest + "<br\>Prochain métro à : " + horaire);
-                //var marker = L.marker([latitud, longitud]).bindPopup(station.stop_name);
-
-                marker.addTo(map);
-            });
-
-            // Utiliser Promise.all pour attendre que toutes les Promises soient résolues
-            Promise.all(promises)
-                .then(() => {
-                    console.log("Tous les horaires ont été résolus.");
-                })
-                .catch(error => {
-                    console.error('Erreur lors de la résolution des horaires:', error);
+        $.ajax({
+            type: "GET",
+            url: "./static/refs/arrets.json",
+            dataType: "json",
+            success: async function (data) {
+                var routeLayers = {};
+                var overlayMaps = {};
+                var promises = data.map(async function (station) {
+                    var latitud = station.pointgeo.lat;
+                    var longitud = station.pointgeo.lon;
+                    var routeLongName = station.route_long_name;
+                    if (!routeLayers[routeLongName]) {
+                        routeLayers[routeLongName] = L.layerGroup();
+                    }
+                    var horaire_dest = await horaires(station);
+                    var horaire = horaire_dest[0];
+                    var dest = horaire_dest[1];
+                    horaire = refactorDate(horaire);
+                    var marker = L.marker([latitud, longitud]).bindPopup(station.stop_name + "<br\>En destination de : " + dest + "<br\>Prochain métro à : " + horaire);
+                    routeLayers[routeLongName].addLayer(marker);
                 });
-        },
-        error: function (error) {
-            console.error(error);
-        }
-    });
+                for (var route in routeLayers) {
+                    overlayMaps[route] = routeLayers[route];
+                }
+                L.control.layers(null, overlayMaps).addTo(map);
+                Promise.all(promises)
+                    .then(() => {
+                        console.log("Tous les horaires ont été résolus.");
+                        resolve();
+                    })
+                    .catch(error => {
+                        console.error('Erreur lors de la résolution des horaires:', error);
+                        reject(error);
+                    });
+            },
+            error: function (error) {
+                console.error(error);
+                reject(error);
+            }
+        });
 }
 
 function init() {
@@ -90,7 +90,10 @@ function init() {
         layers: [osm, maison, iut]
     });
 
-    recupStation(map);
+
+    //recupStation(map);
+    recupStation(map)
+    //addLayerControls(map, overlayMaps);
 
     var layerControl = L.control.layers(baseMaps, overlayMaps).addTo(map);
 
@@ -102,6 +105,7 @@ function init() {
     autocomplete(document.getElementById("myInput"), listeNomArrets);
 
     initDrag(map);
+
     activerBtnDel();
     document.getElementById("myBtnAdd").style.display = "none";
 
