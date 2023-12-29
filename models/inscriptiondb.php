@@ -5,7 +5,7 @@ function addUser($userLogin,$userMail, $userPassword): bool
 {
     $DB = connectToDB();
     $query = $DB->prepare(
-        "INSERT INTO utilisateur (userLogin,UserMail,userPassword, isEnable)
+        "INSERT INTO utilisateur (userLogin,userMail,userPassword, isEnable)
         VALUES (?, ?,?, 1)"
     );
 
