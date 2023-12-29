@@ -2,7 +2,7 @@
 
 <?php ob_start(); ?>
 <h2>Bienvenue</h2>
-    <form action="index.php" method="post">
+    <form action="index.php?action=connecter" method="post">
         <div class="form-group">
             <label for="userMail">Identifiant</label>
             <input type="email" class="form-control" name="userMail" aria-describedby="emailHelp" placeholder="dupont@gmail.com">
@@ -11,8 +11,9 @@
             <label for="userPassword">Mot de passe</label>
             <input type="password" class="form-control" name="userPassword" placeholder="Mot de passe">
         </div>
-        <button type="submit" class="btn btn-primary">Valider</button>
+        <button type="submit" class="btn btn-primary">Connecter</button>
     </form>
+    <a href="index.php?action=inscription">Vous n'êtes pas inscrit ? S'inscrire ici</a>
     <!-- Drag And Drop -->
     <form autocomplete="off" action="">
         <div class="autocomplete" style="width:300px;">
