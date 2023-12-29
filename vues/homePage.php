@@ -11,7 +11,7 @@
             <label for="userPassword">Mot de passe</label>
             <input type="password" class="form-control" name="userPassword" placeholder="Mot de passe">
         </div>
-        <button type="submit" class="btn btn-primary">Connecter</button>
+        <button type="submit" class="btn btn-primary">Se connecter</button>
     </form>
     <a href="index.php?action=inscription">Vous n'êtes pas inscrit ? S'inscrire ici</a>
     <!-- Drag And Drop -->
