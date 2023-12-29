@@ -5,60 +5,62 @@ addEventListener("load", init);
 
 
 function recupStation(map) {
-        $.ajax({
-            type: "GET",
-            url: "./static/refs/arrets.json",
-            dataType: "json",
-            success: async function (data) {
-                var routeLayers = {};
-                var overlayMaps = {};
-                var promises = data.map(async function (station) {
-                    var latitud = station.pointgeo.lat;
-                    var longitud = station.pointgeo.lon;
-                    var color = station.route_long_name;
-                    var routeLongName = station.route_long_name;
-                    if (!routeLayers[routeLongName]) {
-                        routeLayers[routeLongName] = L.layerGroup();
-                    }
-                    var horaire_dest = await horaires(station);
-                    var horaire = horaire_dest[0];
-                    var dest = horaire_dest[1];
-                    horaire = refactorDate(horaire);
-                    var marker = L.circleMarker([latitud, longitud], {color:getcolor(color),radius:5, fillOpacity:1}).bindPopup(station.stop_name + "<br\>En destination de : " + dest + "<br\>Prochain métro à : " + horaire);
-                    routeLayers[routeLongName].addLayer(marker);
-                });
-                for (var route in routeLayers) {
-                    overlayMaps[route] = routeLayers[route];
+    $.ajax({
+        type: "GET",
+        url: "./static/refs/arrets.json",
+        dataType: "json",
+        success: function (data) {
+            var routeLayers = {};
+            var overlayMaps = {};
+            data.forEach(function (station) {
+                var latitud = station.pointgeo.lat;
+                var longitud = station.pointgeo.lon;
+                var color = station.route_long_name;
+                var nomstation = station.stop_name
+                var routeLongName = station.route_long_name;
+                if (!routeLayers[routeLongName]) {
+                    routeLayers[routeLongName] = L.layerGroup();
                 }
-                L.control.layers(null, overlayMaps).addTo(map);
-                Promise.all(promises)
-                    .then(() => {
-                        console.log("Tous les horaires ont été résolus.");
-                        resolve();
-                    })
-                    .catch(error => {
-                        console.error('Erreur lors de la résolution des horaires:', error);
-                        reject(error);
+                var marker = L.circleMarker([latitud, longitud], {color: getcolor(color), radius: 5, fillOpacity: 1})
+                    .bindPopup(nomstation)
+                    .on('click', function () {
+                        horaires(station)
+                            .then(function (horaire_dest) {
+                                console.log(horaires(station))
+                                var horaire = refactorDate(horaire_dest[0]);
+                                var dest = horaire_dest[1];
+                                marker.setPopupContent(nomstation + "<br\>En destination de : " + dest + "<br\>Prochain métro à : " + horaire);
+                            })
+                            .catch(function (error) {
+                                console.error('Erreur lors de la récupération des horaires:', error);
+                            });
                     });
-            },
-            error: function (error) {
-                console.error(error);
-                reject(error);
+                routeLayers[routeLongName].addLayer(marker);
+            });
+
+            for (var route in routeLayers) {
+                overlayMaps[route] = routeLayers[route];
             }
-        });
+            L.control.layers(null, overlayMaps).addTo(map);
+        },
+        error: function (error) {
+            console.error(error);
+            reject(error);
+        }
+    });
 }
 
-function init() {
 
+
+function init() {
     var IUT_paris = new L.Marker([48.84222090637304, 2.267797611373178]).bindPopup('IUT Paris Rives de Seine');
     var chez_moi = new L.Marker([48.89230421741235, 2.2888199288353763]).bindPopup('Maison');
-    var Tour_effeil = L.marker(coordTourEffeil).bindPopup('Tour Effeil'),
-        Arc_triomphe = L.marker(coordArcTriomphe).bindPopup('Arc de Triomphe');
+    var Tour_effeil = L.marker(coordTourEffeil).bindPopup('Tour Effeil');
+    var Arc_triomphe = L.marker(coordArcTriomphe).bindPopup('Arc de Triomphe');
 
     var maison = L.layerGroup([chez_moi]);
     var iut = L.layerGroup([IUT_paris]);
     var monuments = L.layerGroup([Tour_effeil, Arc_triomphe]);
-
 
     var openTopoMap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
         maxZoom: 20,
@@ -91,10 +93,7 @@ function init() {
         layers: [osm, maison, iut]
     });
 
-
-    //recupStation(map);
-    recupStation(map)
-    //addLayerControls(map, overlayMaps);
+    recupStation(map);
 
     var layerControl = L.control.layers(baseMaps, overlayMaps).addTo(map);
 
