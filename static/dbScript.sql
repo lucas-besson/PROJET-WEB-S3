@@ -11,8 +11,8 @@ CREATE TABLE utilisateur (
 );
 
 CREATE TABLE gare (
-    nomGare VARCHAR(255),
-    idGare INT AUTO_INCREMENT PRIMARY KEY
+    idGare INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    nomGare VARCHAR(255)
 );
 
 CREATE TABLE favoris (
@@ -50,3 +50,21 @@ FROM utilisateur U
          INNER JOIN favoris F ON F.idUtilisateurFav = U.id_utilisateur
          INNER JOIN gare G ON G.idGare = F.idGareFav
 WHERE userMail LIKE 'client@client.fr';
+
+DROP TABLE IF EXISTS gare;
+CREATE TABLE gare (
+                      idGare INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+                      stop_id VARCHAR(255),
+                      stop_name VARCHAR(255)
+);
+
+LOAD DATA LOCAL INFILE '/Users/lucasbesson/Desktop/IUT_RDS/PERIODE-B/DEV-WEB/PROJET-WEB-S3/static/refs/arrets-db.csv'
+    INTO TABLE gare
+    FIELDS TERMINATED BY ';'
+    ENCLOSED BY '"'
+    LINES TERMINATED BY '\n'
+    IGNORE 1 LINES
+    (@pasdedata, @pasdedata, @pasdedata, @pasdedata, stop_id, stop_name, @pasdedata, @pasdedata, @pasdedata, @pasdedata, @pasdedata, @pasdedata);
+
+SELECT * FROM gare
+
