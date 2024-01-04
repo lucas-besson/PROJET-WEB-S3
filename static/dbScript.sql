@@ -51,6 +51,7 @@ FROM utilisateur U
          INNER JOIN gare G ON G.idGare = F.idGareFav
 WHERE userMail LIKE 'client@client.fr';
 
+DROP TABLE IF EXISTS favoris;
 DROP TABLE IF EXISTS gare;
 CREATE TABLE gare (
                       idGare INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
