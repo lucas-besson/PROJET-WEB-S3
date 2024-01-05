@@ -6,6 +6,7 @@ function userPage(string $userMail, string $userPsw){
     foreach ($users as $myUser) {
         if ($myUser['userMail'] == $userMail && $myUser['userPassword'] == $userPsw) {
             $favs = getUserFavorite($myUser['userLogin']);
+            $allStation = getAllStation();
             require('vues/userPage.php');
         }
     }

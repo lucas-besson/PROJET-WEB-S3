@@ -1,9 +1,83 @@
 const coordParis = [48.8566, 2.3522];
-const coordTourEffeil = [48.8584, 2.2945];
-const coordArcTriomphe = [48.87391868940699, 2.2950274969557416];
+const coordIUT = [48.842055046037764, 2.2678083530152557];
 addEventListener("load", init);
 
+function init() {
 
+    var map = L.map('map', {
+        center: coordParis,
+        zoom: 12
+    });
+
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+
+    initLayer(map);
+    recupStation(map);
+    getArrets();
+    autocomplete(document.getElementById("myInput"), listeNomArrets);
+    initDrag(map);
+    activerBtnDel();
+    document.getElementById("myBtnAdd").style.display = "none";
+    document.getElementById("myBtnAdd").addEventListener("click", function () {
+        var newDrag = document.createElement("div");
+        newDrag.id = "myDragSection";
+        newDrag.innerHTML = '<div id="myDragLabel">Avatar</div> <button id="myDragButton">Placer</button> <button id="myBtnDel">X</button> <div id="myDragItem" class="ui-widget-content"> <p>Icon</p> </div>';
+        document.getElementById("myDragContainer").appendChild(newDrag);
+        initDrag(map);
+        activerBtnDel();
+        document.getElementById("myBtnAdd").style.display = "none";
+    });
+}
+
+function initLayer(map){
+
+    var IUT_paris = L.marker(coordIUT, {
+        title : "IUT Paris Rives de Seine"
+    });
+
+    var iut = L.layerGroup([IUT_paris]);
+    var monuments = L.layerGroup(initMonument());
+
+    var overlayMaps = {
+        "Etude": iut,
+        "Monument": monuments
+    };
+
+    var layerControl = L.control.layers().addTo(map);
+    layerControl.addOverlay(iut, "IUT");
+    layerControl.addOverlay(monuments, "Monuments");
+}
+function initMonument(){
+    let dictMonument = {
+        'Tour Effeil': [48.8584, 2.2945],
+        'Arc de Triomphe': [48.87391868940699, 2.2950274969557416],
+        'Cathédrale Notre Dame de Paris': [48.852992879593735, 2.3498591818522647],
+        'Pantheon': [48.846285315402035, 2.346456712930375],
+        'Le Louvre': [48.86081932973446, 2.337630912169469],
+        'Le Palais Garnier': [48.871934387197086, 2.331612126422299],
+        'Basilic du Sacré-coeur': [48.88671162608589, 2.343104297586574],
+        'Les Invalides': [48.85685667197095, 2.3126740217356545],
+        'Place de la concorde': [48.8656627436685, 2.3212107282767076],
+        'Centre Pompidou': [48.86064895584978, 2.352159153462484]
+
+    };
+    let monuments = [];
+
+    for (let monument in dictMonument){
+        let icon = {
+            iconUrl:"./static/img/" + monument +".png",
+            iconSize: [40, 40]
+        };
+        let marker = L.marker(dictMonument[monument], {
+            icon: L.icon(icon),
+            title : monument
+        });
+        monuments.push(marker);
+    }
+    return monuments;
+}
 function recupStation(map) {
     $.ajax({
         type: "GET",
@@ -49,78 +123,6 @@ function recupStation(map) {
         }
     });
 }
-
-
-
-function init() {
-    var IUT_paris = new L.Marker([48.84222090637304, 2.267797611373178]).bindPopup('IUT Paris Rives de Seine');
-    var chez_moi = new L.Marker([48.89230421741235, 2.2888199288353763]).bindPopup('Maison');
-    var Tour_effeil = L.marker(coordTourEffeil).bindPopup('Tour Effeil');
-    var Arc_triomphe = L.marker(coordArcTriomphe).bindPopup('Arc de Triomphe');
-
-    var maison = L.layerGroup([chez_moi]);
-    var iut = L.layerGroup([IUT_paris]);
-    var monuments = L.layerGroup([Tour_effeil, Arc_triomphe]);
-
-    var openTopoMap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
-        maxZoom: 20,
-        attribution: 'Map data: © OpenStreetMap contributors, SRTM | Map style: © OpenTopoMap (CC-BY-SA)'
-    });
-
-    var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '© OpenStreetMap'
-    });
-
-    var osmHOT = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '© OpenStreetMap contributors, Tiles style by Humanitarian OpenStreetMap Team hosted by OpenStreetMap France'
-    });
-
-    var baseMaps = {
-        "OpenStreetMap": osm,
-        "<span style='color: red'>OpenStreetMap.HOT</span>": osmHOT
-    };
-
-    var overlayMaps = {
-        "Chez Moi": maison,
-        "Etude": iut
-    };
-
-    var map = L.map('map', {
-        center: coordParis,
-        zoom: 12,
-        layers: [osm, maison, iut]
-    });
-
-    recupStation(map);
-
-    var layerControl = L.control.layers(baseMaps, overlayMaps).addTo(map);
-
-    layerControl.addBaseLayer(openTopoMap, "OpenTopoMap");
-    layerControl.addOverlay(monuments, "Monuments");
-
-    getArrets();
-
-    autocomplete(document.getElementById("myInput"), listeNomArrets);
-
-    initDrag(map);
-
-    activerBtnDel();
-    document.getElementById("myBtnAdd").style.display = "none";
-
-    document.getElementById("myBtnAdd").addEventListener("click", function () {
-        var newDrag = document.createElement("div");
-        newDrag.id = "myDragSection";
-        newDrag.innerHTML = '<div id="myDragLabel">Avatar</div> <button id="myDragButton">Placer</button> <button id="myBtnDel">X</button> <div id="myDragItem" class="ui-widget-content"> <p>Icon</p> </div>';
-        document.getElementById("myDragContainer").appendChild(newDrag);
-        initDrag(map);
-        activerBtnDel();
-        document.getElementById("myBtnAdd").style.display = "none";
-    });
-}
-
-
 
 
 function initDrag(map) {

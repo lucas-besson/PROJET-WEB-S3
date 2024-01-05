@@ -52,4 +52,28 @@ function getUserFavorite($id): array
 
     return $favoris;
 }
-?>
+/*
+function getAllStation():array
+{
+    $DB = connectToDB();
+    $query = $DB->prepare(
+        "SELECT G.nomGare, U.userLogin, U.id_utilisateur
+         FROM utilisateur U
+         INNER JOIN favoris F ON F.idUtilisateurFav = U.id_utilisateur
+         INNER JOIN gare G ON G.idGare = F.idGareFav
+         WHERE id_utilisateur = ? ;"
+    );
+    $query->execute([$id]);
+
+    $favoris = [];
+    while ($row = $query->fetch()) {
+        $fav = [
+            'gare' => $row['nomGare'],
+            'name' => $row['userLogin']
+        ];
+        $favoris[] = $fav;
+    }
+
+    return $favoris;
+}
+*/

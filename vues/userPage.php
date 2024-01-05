@@ -2,6 +2,16 @@
 
 <?php ob_start(); ?>
     <h2>Bienvenue <?= $myUser['userName'] ?></h2>
+    <label for="gare">Saison</label><input type="text" name="gare" id="gare" list="gareList">
+    <datalist id="gareList">
+        <?php
+        foreach ($allStation as $station){
+            ?>
+            <option><?= $station ?></option>
+            <?php
+        }
+        ?>
+    </datalist>
     <table class="table">
         <thead class="table-dark">
             <th>Gare</th>
