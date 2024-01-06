@@ -69,36 +69,14 @@ input[type=submit] {
 
 /* Début du composant draggable */
 
-#myDragItem { 
-  padding: 2%; 
-  z-index: 1;
+#myAvatar {
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 
-#myDragItem p { 
-  margin: 0 !important;
-  user-select: none;
-}
-
-#myDragSection {
-  display: flex;
-  align-items: center;
-}
-
-#myDragLabel, #myDragButton, #myBtnDel, #myDragItem{
-  margin: 2%;
-}
-
-#myMenu {
-  z-index: 2;
-}
-
-#myAvatar p{
-  margin-top: 8%;
-  text-align: center;
-}
 /* Fin du composant draggable */
+
 /* Page utilisateur */
 h2 {
   text-align: center;

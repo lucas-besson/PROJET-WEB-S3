@@ -18,17 +18,6 @@ function init() {
     getArrets();
     autocomplete(document.getElementById("myInput"), listeNomArrets);
     initDrag(map);
-    activerBtnDel();
-    document.getElementById("myBtnAdd").style.display = "none";
-    document.getElementById("myBtnAdd").addEventListener("click", function () {
-        var newDrag = document.createElement("div");
-        newDrag.id = "myDragSection";
-        newDrag.innerHTML = '<div id="myDragLabel">Avatar</div> <button id="myDragButton">Placer</button> <button id="myBtnDel">X</button> <div id="myDragItem" class="ui-widget-content"> <p>Icon</p> </div>';
-        document.getElementById("myDragContainer").appendChild(newDrag);
-        initDrag(map);
-        activerBtnDel();
-        document.getElementById("myBtnAdd").style.display = "none";
-    });
 }
 
 function initLayer(map){
@@ -126,41 +115,46 @@ function recupStation(map) {
 
 
 function initDrag(map) {
-    var myDraggable = $("#myDragItem");
-    var draggableLatLng;
-    var myDraggableButton = $("#myDragButton");
-
-    myDraggableButton.prop("disabled", true);
-
-    myDraggable.draggable({
-        stop: function (event, ui) {
-            draggableLatLng = map.containerPointToLatLng(L.point(ui.position.left, ui.position.top));
-            myDraggable.data('latLng', draggableLatLng);
-
-            myDraggableButton.text("Enregistrer");
-            myDraggableButton.prop("disabled", false);
-        },
-        containment: "#map",
-        scroll: false
-    });
-
-    myDraggableButton.on("click", function () {
-        if (myDraggableButton.text() === "Enregistrer") {
-            myDraggable.draggable("disable");
-            myDraggableButton.text("Modifier");
-        } else if (myDraggableButton.text() === "Modifier") {
-            myDraggable.draggable("enable");
-            myDraggableButton.text("Placer");
-            $("#myDragButton").prop("disabled", true);
+    var myDragPosition = [48.84222090637304, 2.267797611373178];
+    var myDrag = createDrag(map, myDragPosition);
+    manageDrag(myDrag);
+    
+    var myDragButton = document.getElementById('myAvatarButton');
+    myDragButton.addEventListener('click', function () {
+        if (myDrag) {
+            myDragPosition = myDrag.getLatLng();
+            map.removeLayer(myDrag);
+            myDrag = null;
+            this.innerHTML = "Créer un avatar";
+        } else {
+            myDrag = createDrag(map, myDragPosition);
+            manageDrag(myDrag);
+            this.innerHTML = "Supprimer l'avatar";
         }
     });
 }
 
-function activerBtnDel() {
-    document.getElementById("myBtnDel").addEventListener("click", function () {
-        var myDragContainer = document.getElementById("myDragContainer");
-        myDragContainer.innerHTML = '';
-        document.getElementById("myBtnAdd").style.display = "block";
+function createDrag(map, aDragPosition){
+    var aDragIcon = L.icon({
+        iconUrl: './static/img/bonhomme_baton_standing.png',
+        iconSize: [32, 44], 
+        iconAnchor: [16, 20], 
+        popupAnchor: [0, -20] 
+    });
+    return new L.Marker(aDragPosition, {
+        draggable: true,
+        icon: aDragIcon
+    }).addTo(map);
+}
+
+function manageDrag(aDrag){
+    aDrag.bindPopup("<b>Coucou !</b><br>Je suis ton avatar :D").openPopup();
+    aDrag.on('drag', function() {
+        this.bindPopup("<b>Dépose-moi sur la carte !</b>").openPopup();
+    });
+    aDrag.on('dragend', function() {
+        var popupText = "Lat: " + this.getLatLng().lat + " / Lng: " + this.getLatLng().lng;
+        this.bindPopup("<b>Ma position :</b><br>"+ popupText).openPopup();
     });
 }
 
