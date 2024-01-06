@@ -1,15 +1,16 @@
 <?php
 require_once('models/authentification.php');
 
-function userPage(string $userMail, string $userPsw){
-    $users = getUserWithHisPassword($userMail);
+function userPage(string $userName, string $userPsw){
+
+    $users = getUserWithHisPassword($userName);
     foreach ($users as $myUser) {
-        if ($myUser['userMail'] == $userMail && $myUser['userPassword'] == $userPsw) {
-            $favs = getUserFavorite($myUser['userLogin']);
+        if ($myUser['userName'] == $userName && $myUser['userPassword'] == $userPsw) {
+            $favs = getUserFavorite($myUser['userId']);
+
             $allStation = getAllStation();
             require('vues/userPage.php');
         }
     }
     require('vues/homePage.php');
 }
-?>

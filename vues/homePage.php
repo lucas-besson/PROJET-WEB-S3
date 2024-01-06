@@ -5,7 +5,7 @@
     <form action="index.php?action=connecter" method="post">
         <div class="form-group">
             <label for="userMail">Identifiant</label>
-            <input type="email" class="form-control" name="userMail" aria-describedby="emailHelp" placeholder="dupont@gmail.com">
+            <input class="form-control" name="userName" placeholder="dupont">
         </div>
         <div class="form-group">
             <label for="userPassword">Mot de passe</label>
