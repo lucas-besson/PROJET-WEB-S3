@@ -152,9 +152,18 @@ function manageDrag(aDrag){
     aDrag.on('drag', function() {
         this.bindPopup("<b>Dépose-moi sur la carte !</b>").openPopup();
     });
-    aDrag.on('dragend', function() {
-        var popupText = "Lat: " + this.getLatLng().lat + " / Lng: " + this.getLatLng().lng;
-        this.bindPopup("<b>Ma position :</b><br>"+ popupText).openPopup();
+    aDrag.on('dragend', async function() {
+        var link = 'http://nominatim.openstreetmap.org/reverse?format=json&lat=' + this.getLatLng().lat + '&lon=' + this.getLatLng().lng + '&format=json&addressdetails=1&extratags=1';
+        try {
+            var response = await fetch(link);
+            var data = await response.json();
+            console.log(data);
+            var ville;
+            if(data.address.city){ville=data.address.city}else if(data.address.town){ville=data.address.town}else{ville=data.address.village}
+            this.bindPopup("<b>Ma position :</b><br>" + data.address.road + ", " + ville).openPopup();
+        } catch (error) {
+            console.error("Error fetching or parsing data:", error);
+        }
     });
 }
 
