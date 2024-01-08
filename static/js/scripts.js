@@ -20,8 +20,13 @@ function init() {
 }
 
 function initLayer(map){
+    let icon_IUT = {
+        iconUrl:"./static/img/iut.png",
+        iconSize: [40, 40]
+    };
 
     var IUT_paris = L.marker(coordIUT, {
+        icon: L.icon(icon_IUT),
         title : "IUT Paris Rives de Seine"
     });
 
@@ -130,6 +135,7 @@ function initDrag(map) {
             this.innerHTML = "Supprimer l'avatar";
         }
     });
+
 }
 
 function createDrag(map){

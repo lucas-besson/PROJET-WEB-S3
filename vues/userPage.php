@@ -13,7 +13,10 @@ ob_start();
             <?php
                 foreach ($favs as $fav){
             ?>
-                <tr><td><?= $fav['gare'] ?></td><td>16:30</td></tr>
+                <tr>
+                    <td><?= $fav['gare'] ?></td>
+                    <td class="favoris" id="<?= $fav['idstop'] ?>"></td>
+                </tr>
             <?php
             }
             ?>
@@ -21,11 +24,11 @@ ob_start();
     </table>
     <form action="index.php?action=favoris" method="post">
         <label for="gare">Les Gares</label><input type="text" name="gare" id="gare" list="gareList">
-        <datalist id="gareList" name="gare">
+        <datalist id="gareList" name="gare" required>
             <?php
             foreach ($allStation as $station){
                 ?>
-                <option value="<?= $station['gare'] ?>"><?= $station['gare'] ?></option>
+                <option value="<?= $station['gare'] ?>"><?= $station['gare'] . " Ligne " . $station['line'] ?></option>
                 <?php
             }
             ?>

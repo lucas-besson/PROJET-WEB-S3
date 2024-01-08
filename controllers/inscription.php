@@ -12,7 +12,8 @@ function inscriptionPage()
                 $userPassword = $_POST['UserPassword'];
                 $success = addUser($userLogin,$userMail, $userPassword);
                 if ($success) {
-                    userPage($userMail, $userPassword);
+                    $_SESSION['login'] = $userLogin;
+                    userPage($userLogin, $userPassword);
                     exit;
                 } else {
                     $erreur = "L'inscription n'a pas fonctionne";
