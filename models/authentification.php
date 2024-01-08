@@ -31,7 +31,7 @@ function getUserFavorite($id): array
 {
     $DB = connectToDB();
     $query = $DB->prepare(
-        "SELECT DISTINCT G.stop_name, U.userLogin, U.id_utilisateur
+        "SELECT DISTINCT G.stop_name, G.stop_id, U.userLogin, U.id_utilisateur
          FROM utilisateur U
          INNER JOIN favoris F ON F.idUtilisateurFav = U.id_utilisateur
          INNER JOIN gare G ON G.idGare = F.idGareFav
@@ -43,11 +43,11 @@ function getUserFavorite($id): array
     while ($row = $query->fetch()) {
         $fav = [
             'gare' => $row['stop_name'],
+            'idstop' => $row['stop_id'],
             'name' => $row['userLogin']
         ];
         $favoris[] = $fav;
     }
-
     return $favoris;
 }
 
@@ -55,7 +55,7 @@ function getAllStation():array
 {
     $DB = connectToDB();
     $query = $DB->prepare(
-        "SELECT stop_name
+        "SELECT stop_name, route_long_name
             FROM gare;"
     );
     $query->execute();
@@ -63,7 +63,8 @@ function getAllStation():array
     $stations = [];
     while ($row = $query->fetch()) {
         $station = [
-            'gare' => $row['stop_name']
+            'gare' => $row['stop_name'],
+            'line' => $row['route_long_name']
         ];
         $stations[] =  $station;
     }

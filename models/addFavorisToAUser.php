@@ -8,10 +8,11 @@ function addAFavStation($station, $userLogin): bool
 "INSERT INTO favoris(idGareFav, idUtilisateurFav)
     VALUES (?, ?);"
     );
-    if($query->execute([getFunctionId($station) , getUserId($userLogin)])){
-        return true;
+    if (getFunctionId($station))
+    {
+        $query->execute([getFunctionId($station) , getUserId($userLogin)]);
     }
-   return false;
+    return false;
 }
 
 function getUserId($login): int{
@@ -29,7 +30,7 @@ function getUserId($login): int{
     return $id['utilisateur'];
 }
 
-function getFunctionId($station): int{
+function getFunctionId($station){
     $DB = connectToDB();
     $query = $DB->prepare(
         "SELECT idGare
@@ -38,8 +39,12 @@ function getFunctionId($station): int{
     );
     $query->execute([$station]);
     $row = $query->fetch();
-    $id = [
-        'station' => $row['idGare']
-    ];
-    return $id['station'];
+    if(!empty($row['idGare'])){
+        $id = [
+            'station' => $row['idGare']
+        ];
+        return $id['station'];
+    }
+    return False;
+
 }

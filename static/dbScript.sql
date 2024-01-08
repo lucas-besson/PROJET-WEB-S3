@@ -13,7 +13,8 @@ CREATE TABLE utilisateur (
 CREATE TABLE gare (
     idGare INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
     stop_id VARCHAR(255),
-    stop_name VARCHAR(255)
+    stop_name VARCHAR(255),
+    route_long_name VARCHAR(255)
 );
 
 CREATE TABLE favoris (
@@ -32,7 +33,7 @@ LOAD DATA LOCAL INFILE 'D:\\Programmes\\Xampp\\htdocs\\PROJET-WEB-S3\\static\\re
     ENCLOSED BY '"'
     LINES TERMINATED BY '\n'
     IGNORE 1 LINES
-    (@pasdedata, @pasdedata, @pasdedata, @pasdedata, stop_id, stop_name, @pasdedata, @pasdedata, @pasdedata, @pasdedata, @pasdedata, @pasdedata);
+    (@pasdedata, route_long_name, @pasdedata, @pasdedata, stop_id, stop_name, @pasdedata, @pasdedata, @pasdedata, @pasdedata, @pasdedata, @pasdedata);
 
 INSERT INTO utilisateur(id_utilisateur, userLogin, userMail,
                         userPassword, isEnable)

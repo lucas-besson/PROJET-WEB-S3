@@ -3,7 +3,6 @@ const coordIUT = [48.842055046037764, 2.2678083530152557];
 addEventListener("load", init);
 
 function init() {
-
     var map = L.map('map', {
         center: coordParis,
         zoom: 12
@@ -21,8 +20,13 @@ function init() {
 }
 
 function initLayer(map){
+    let icon_IUT = {
+        iconUrl:"./static/img/iut.png",
+        iconSize: [40, 40]
+    };
 
     var IUT_paris = L.marker(coordIUT, {
+        icon: L.icon(icon_IUT),
         title : "IUT Paris Rives de Seine"
     });
 
@@ -116,8 +120,7 @@ function recupStation(map) {
 
 
 function initDrag(map) {
-    var myDragPosition = [48.84222090637304, 2.267797611373178];
-    var myDrag = createDrag(map, myDragPosition);
+    var myDrag = createDrag(map);
     manageDrag(myDrag);
     
     var myDragButton = document.getElementById('myAvatarButton');
@@ -128,21 +131,22 @@ function initDrag(map) {
             myDrag = null;
             this.innerHTML = "Créer un avatar";
         } else {
-            myDrag = createDrag(map, myDragPosition);
+            myDrag = createDrag(map);
             manageDrag(myDrag);
             this.innerHTML = "Supprimer l'avatar";
         }
     });
+
 }
 
-function createDrag(map, aDragPosition){
+function createDrag(map){
     var aDragIcon = L.icon({
         iconUrl: './static/img/bonhomme_baton_standing.png',
         iconSize: [32, 44], 
         iconAnchor: [16, 20], 
         popupAnchor: [0, -20] 
     });
-    return new L.Marker(aDragPosition, {
+    return new L.Marker(coordIUT, {
         draggable: true,
         icon: aDragIcon
     }).addTo(map);
@@ -154,7 +158,7 @@ function manageDrag(aDrag){
         this.bindPopup("<b>Dépose-moi sur la carte !</b>").openPopup();
     });
     aDrag.on('dragend', async function() {
-        var link = 'http://nominatim.openstreetmap.org/reverse?format=json&lat=' + this.getLatLng().lat + '&lon=' + this.getLatLng().lng + '&format=json&addressdetails=1&extratags=1';
+        var link = 'https://nominatim.openstreetmap.org/reverse?format=json&lat=' + this.getLatLng().lat + '&lon=' + this.getLatLng().lng + '&format=json&addressdetails=1&extratags=1';
         try {
             var response = await fetch(link);
             var data = await response.json();
@@ -167,6 +171,7 @@ function manageDrag(aDrag){
         }
     });
 }
+
 
 function extraireNumerosStopId(stopId) {
     // Utilisation d'une expression régulière pour extraire les numéros
