@@ -11,24 +11,21 @@ if (isset($_GET['action'])) {
         case 'deconnexion':
             session_destroy();
             homePage();
+            break;
         case 'favoris':
-            ajoutFavoris($_SESSION['login'], $_POST['gare']);
+            if (isset($_SESSION['login']) && isset( $_POST['gare'])) {
+                ajoutFavoris($_SESSION['login'], $_POST['gare']);
+            }
+            break;
         case 'inscription':
             inscriptionPage();
             break;
         case 'connecter':
-            try {
-                if (isset($_POST['userName']) && isset($_POST['userPassword'])) {
-
-                    $_SESSION['login'] = $_POST['userName'];
-
-                    userPage($_POST['userName'], $_POST['userPassword']);
-                } else {
-                    homePage();
-                }
-            } catch (Exception $e) {
-                $errorMessage = $e->getMessage();
+            if (isset($_POST['userName']) && isset($_POST['userPassword'])) {
+                $_SESSION['login'] = $_POST['userName'];
+                userPage($_POST['userName'], $_POST['userPassword']);
             }
+            break;
         default:
             homePage();
             break;

@@ -3,7 +3,6 @@ const coordIUT = [48.842055046037764, 2.2678083530152557];
 addEventListener("load", init);
 
 function init() {
-
     var map = L.map('map', {
         center: coordParis,
         zoom: 12
@@ -13,12 +12,14 @@ function init() {
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
 
+    addHoraireUser();
     initLayer(map);
     recupStation(map);
     getArrets();
     autocomplete(document.getElementById("myInput"), listeNomArrets);
     initDrag(map);
     activerBtnDel();
+    activePolyline(map);
     document.getElementById("myBtnAdd").style.display = "none";
     document.getElementById("myBtnAdd").addEventListener("click", function () {
         var newDrag = document.createElement("div");
@@ -32,8 +33,13 @@ function init() {
 }
 
 function initLayer(map){
+    let icon_IUT = {
+        iconUrl:"./static/img/iut.png",
+        iconSize: [40, 40]
+    };
 
     var IUT_paris = L.marker(coordIUT, {
+        icon: L.icon(icon_IUT),
         title : "IUT Paris Rives de Seine"
     });
 
@@ -61,7 +67,6 @@ function initMonument(){
         'Les Invalides': [48.85685667197095, 2.3126740217356545],
         'Place de la concorde': [48.8656627436685, 2.3212107282767076],
         'Centre Pompidou': [48.86064895584978, 2.352159153462484]
-
     };
     let monuments = [];
 
@@ -179,7 +184,6 @@ var horaire = '';
 
 function horaires(station) {
 
-
     var stationID = station.stop_id;
 
     console.log(stationID);
@@ -210,7 +214,34 @@ function horaires(station) {
         });
 }
 
+function horaires_user(station) {
 
+    var stationID = station;
+
+    var traffic_url = 'https://prim.iledefrance-mobilites.fr/marketplace/stop-monitoring?MonitoringRef=STIF%3AStopPoint%3AQ%3A' + stationID + '%3A';
+
+    var token = 'nYRgohLx6OwxTpsgS4oCyAyxWZn4wQdT';
+
+    const headers = {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Apikey': token,
+    };
+
+    // Return the promise directly
+    return fetch(traffic_url, {
+        method: 'GET',
+        headers: headers,
+    })
+        .then(response => response.json())
+        .then(data => {
+            return [data.Siri.ServiceDelivery.StopMonitoringDelivery[0].MonitoredStopVisit[0].MonitoredVehicleJourney.MonitoredCall.ExpectedArrivalTime, data.Siri.ServiceDelivery.StopMonitoringDelivery[0].MonitoredStopVisit[0].MonitoredVehicleJourney.DestinationName[0].value];
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            throw error; // rethrow the error to be caught by the caller
+        });
+}
 
 function refactorDate(horaire) {
     // Date au format GMT
@@ -395,3 +426,24 @@ function getcolor(id){
     }
 }
 
+function addHoraireUser(){
+    let lesFavs = document.getElementsByClassName('favoris');
+    Array.from(lesFavs).forEach(function (element) {
+        let e = element.id.match(/\d+/)[0];
+       horaires_user(e).then(
+            function (horaire_dest) {
+            var horaire = refactorDate(horaire_dest[0])
+                element.innerHTML = horaire
+       });
+    });
+
+}
+
+function activePolyline(map, coordAvatar){
+    let latlngs = [
+        coordIUT,
+        coordAvatar
+    ];
+
+    let polyline = L.polyline(latlngs, {color: 'red'}).addTo(map);
+}
