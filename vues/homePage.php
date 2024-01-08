@@ -1,6 +1,7 @@
 <?php $title="home"; ?>
 
 <?php ob_start(); ?>
+
 <h2>Bienvenue</h2>
     <form action="index.php?action=connecter" method="post">
         <div class="form-group">

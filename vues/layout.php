@@ -18,6 +18,7 @@
 <body>
     <div class="container-fluid">
         <div class="row">
+            <button id="hamburgerBtn" onclick="hideMenu()"><img id="hamburgerImg" src="../static/img/Hamburger_icon.png"/> Menu</button>
             <div class="col-md-2" id="myMenu">
                 <?= $content ?>
             </div>

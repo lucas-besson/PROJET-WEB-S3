@@ -67,6 +67,7 @@ function initMonument(){
     }
     return monuments;
 }
+
 function recupStation(map) {
     $.ajax({
         type: "GET",
@@ -245,14 +246,15 @@ function getArrets() {
 
                 // Créer un objet avec id et name
                 var elementData = {
-                    id: element.arrid,
-                    name: element.arrname,
-                    geo: element.arrgeopoint
+                    id: element.stop_id,
+                    name: element.stop_name,
+                    geo: element.pointgeo,
+                    ligne : element.route_long_name
                 };
 
                 // Ajouter l'objet au tableau
                 listeArrets.push(elementData);
-                listeNomArrets.push(element.arrname);
+                listeNomArrets.push(elementData.name + " (Métro " + elementData.ligne + ")");
             });
         })
         .catch(error => {
@@ -267,11 +269,11 @@ function autocomplete(inp, arr) {
     the text field element and an array of possible autocompleted values:*/
     var currentFocus;
     /*execute a function when someone writes in the text field:*/
-    inp.addEventListener("input", function (e) {
+    inp.addEventListener("input", function(e) {
         var a, b, i, val = this.value;
         /*close any already open lists of autocompleted values*/
         closeAllLists();
-        if (!val) { return false; }
+        if (!val) { return false;}
         currentFocus = -1;
         /*create a DIV element that will contain the items (values):*/
         a = document.createElement("DIV");
@@ -282,7 +284,7 @@ function autocomplete(inp, arr) {
         /*for each item in the array...*/
         for (i = 0; i < arr.length; i++) {
             /*check if the item starts with the same letters as the text field value:*/
-            if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+            if (arr[i].substring(0, val.length).toUpperCase() == val.toUpperCase()) {
                 /*create a DIV element for each matching element:*/
                 b = document.createElement("DIV");
                 /*make the matching letters bold:*/
@@ -291,7 +293,7 @@ function autocomplete(inp, arr) {
                 /*insert a input field that will hold the current array item's value:*/
                 b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
                 /*execute a function when someone clicks on the item value (DIV element):*/
-                b.addEventListener("click", function (e) {
+                b.addEventListener("click", function(e) {
                     /*insert the value for the autocomplete text field:*/
                     inp.value = this.getElementsByTagName("input")[0].value;
                     /*close the list of autocompleted values,
@@ -303,7 +305,7 @@ function autocomplete(inp, arr) {
         }
     });
     /*execute a function presses a key on the keyboard:*/
-    inp.addEventListener("keydown", function (e) {
+    inp.addEventListener("keydown", function(e) {
         var x = document.getElementById(this.id + "autocomplete-list");
         if (x) x = x.getElementsByTagName("div");
         if (e.keyCode == 40) {
@@ -398,3 +400,11 @@ function getcolor(id){
     }
 }
 
+function hideMenu() {
+    var x = document.getElementById("myMenu");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}

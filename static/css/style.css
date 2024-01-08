@@ -75,6 +75,48 @@ input[type=submit] {
   align-items: center;
 }
 
+#myDragItem p { 
+  margin: 0 !important;
+  user-select: none;
+}
+
+#myDragSection {
+  display: flex;
+  align-items: center;
+}
+
+#myDragLabel, #myDragButton, #myBtnDel, #myDragItem{
+  margin: 2%;
+}
+
+#hamburgerImg {
+  margin-top: 5%;
+  height: 40px;
+  width : auto;
+}
+
+#hamburgerBtn {
+  position: fixed;
+  margin-left : 50%;
+  margin-top: 1%;
+  width: auto;
+  height: 40px;
+  z-index: 9999; /* Z-index élevé pour être au-dessus de tout le contenu */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#myMenu {
+  z-index: 2;
+}
+
+
+#myAvatar p{
+  margin-top: 8%;
+  text-align: center;
+}
+
 /* Fin du composant draggable */
 
 /* Page utilisateur */
