@@ -171,6 +171,7 @@ function manageDrag(aDrag){
     });
 }
 
+
 function extraireNumerosStopId(stopId) {
     // Utilisation d'une expression régulière pour extraire les numéros
     const numeros = stopId.match(/\d+/);
