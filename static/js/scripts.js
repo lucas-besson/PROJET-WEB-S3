@@ -407,9 +407,12 @@ function getcolor(id){
 
 function hideMenu() {
     var x = document.getElementById("myMenu");
+    var btn =  document.getElementById("hamburgerBtn");
     if (x.style.display === "none") {
         x.style.display = "block";
+        btn.innerHTML = "Close menu";
     } else {
         x.style.display = "none";
+        btn.innerHTML = "Open menu";
     }
 }

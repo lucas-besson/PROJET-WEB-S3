@@ -1,7 +1,6 @@
 <?php $title="inscription"; ?>
 
 <?php ob_start(); ?>
-<h2>Page Inscription</h2>
     <div class="container">
         <form action="index.php?action=inscription" method="post">
             <h2>Inscription</h2>

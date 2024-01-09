@@ -1,4 +1,5 @@
 #map {
+  width: 201vh;
     height:100vh;
     z-index: 0;
 }
@@ -12,29 +13,12 @@ p {
 body {
   letter-spacing: -1px;
   font-family: 'segoe ui';
+  background-color: black;
 }
 
 .autocomplete {
-  /*the container must be positioned relative:*/
   position: relative;
   display: inline-block;
-}
-
-input {
-  border: 1px solid transparent;
-  background-color: #f1f1f1;
-  padding: 10px;
-  font-size: 16px;
-}
-
-input[type=text] {
-  background-color: #f1f1f1;
-  width: 100%;
-}
-
-input[type=submit] {
-  background-color: DodgerBlue;
-  color: #fff;
 }
 
 .autocomplete-items {
@@ -43,7 +27,6 @@ input[type=submit] {
   border-bottom: none;
   border-top: none;
   z-index: 99;
-  /*position the autocomplete items to be the same width as the container:*/
   top: 100%;
   left: 0;
   right: 0;
@@ -97,7 +80,7 @@ input[type=submit] {
 
 #hamburgerBtn {
   position: fixed;
-  margin-left : 50%;
+  margin-left: 47%;
   margin-top: 1%;
   width: auto;
   height: 40px;
@@ -105,10 +88,19 @@ input[type=submit] {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #363636;
 }
 
 #myMenu {
-  z-index: 2;
+  position: fixed;
+  z-index: 9999; /* Z-index élevé pour être au-dessus de tout le contenu */
+  justify-content: center;
+  align-items: center;
+  background: #363636;
+  padding: 2%;
+  margin-top: 7%;
+  margin-left: 12px;
+  border-radius: 0 7px 7px 0;
 }
 
 
@@ -122,16 +114,32 @@ input[type=submit] {
 /* Page utilisateur */
 h2 {
   text-align: center;
-  margin: 0.5em;
+  margin: 0em 0.5em 0.5em 0.5em;
+  color: white;
 }
 
 label {
   margin: 1.5em 1em 0.5em 0.5em;
+  color: white;
 }
  button[type=submit]{
-   margin: 1em 0em 1em 7em;
+   margin: 1em 0em 1em 3.5em;
  }
 
 button[type=button]{
-  margin-left:5em;
+  margin: 0em 0em 1em 3.75em;
+}
+
+.container-fluid {
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+.row {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+hr {
+  color: white;
 }
