@@ -18,7 +18,6 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <button id="hamburgerBtn" class="btn btn-secondary" onclick="hideMenu()">Close Menu</button>
             <div class="col-md-2" id="myMenu">
                 <?= $content ?>
             </div>
