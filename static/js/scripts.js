@@ -119,7 +119,8 @@ function recupStation(map) {
 
 
 function initDrag(map) {
-    var myDrag = createDrag(map);
+    var myDragPosition = coordIUT;
+    var myDrag = createDrag(map, myDragPosition);
     manageDrag(myDrag);
     
     var myDragButton = document.getElementById('myAvatarButton');
@@ -130,7 +131,7 @@ function initDrag(map) {
             myDrag = null;
             this.innerHTML = "Créer un avatar";
         } else {
-            myDrag = createDrag(map);
+            myDrag = createDrag(map, myDragPosition);
             manageDrag(myDrag);
             this.innerHTML = "Supprimer l'avatar";
         }
@@ -138,14 +139,14 @@ function initDrag(map) {
 
 }
 
-function createDrag(map){
+function createDrag(map, aDragPosition){
     var aDragIcon = L.icon({
         iconUrl: './static/img/bonhomme_baton_standing.png',
         iconSize: [32, 44], 
         iconAnchor: [16, 20], 
         popupAnchor: [0, -20] 
     });
-    return new L.Marker(coordIUT, {
+    return new L.Marker(aDragPosition, {
         draggable: true,
         icon: aDragIcon
     }).addTo(map);

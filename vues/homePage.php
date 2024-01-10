@@ -22,7 +22,7 @@
     </form>
     <hr>
     <div id="myAvatar">
-        <button id="myAvatarButton">Supprimer l'avatar</button>
+        <button id="myAvatarButton" class="btn btn-primary">Supprimer l'avatar</button>
    </div>
 <?php $content = ob_get_clean(); ?>
 <?php require('./vues/layout.php') ?>
