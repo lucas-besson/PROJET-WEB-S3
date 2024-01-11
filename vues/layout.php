@@ -21,7 +21,7 @@
             <div class="col-md-2" id="myMenu">
                 <?= $content ?>
             </div>
-            <div class="col-md-10">
+            <div class="col-md-10" id="myMap">
                 <div id="map"></div>
             </div>
         </div>
