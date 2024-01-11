@@ -27,7 +27,7 @@ CREATE TABLE favoris (
 SET GLOBAL local_infile=1;
 SHOW VARIABLES LIKE 'local_infile';
 
-LOAD DATA LOCAL INFILE 'D:\\Programmes\\Xampp\\htdocs\\PROJET-WEB-S3\\static\\refs\\arrets-db.csv'
+LOAD DATA LOCAL INFILE '/Users/lucasbesson/Desktop/IUT_RDS/PERIODE-B/DEV-WEB/PROJET-WEB-S3/static/refs/arrets-db.csv'
     INTO TABLE gare
     FIELDS TERMINATED BY ';'
     ENCLOSED BY '"'

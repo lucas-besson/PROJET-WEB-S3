@@ -1,10 +1,12 @@
 const coordParis = [48.8566, 2.3522];
 const coordIUT = [48.842055046037764, 2.2678083530152557];
+let map;
+let stations = [];
 addEventListener("load", init);
 
 function init() {
 
-    var map = L.map('map', {
+    map = L.map('map', {
         center: coordParis,
         zoom: 12
     });
@@ -18,6 +20,8 @@ function init() {
     recupStation(map);
     getArrets();
     initDrag(map);
+    loadStationMap();
+    line();
 }
 
 function initLayer(map){
@@ -87,6 +91,7 @@ function recupStation(map) {
                 var color = station.route_long_name;
                 var nomstation = station.stop_name
                 var routeLongName = station.route_long_name;
+
                 if (!routeLayers[routeLongName]) {
                     routeLayers[routeLongName] = L.layerGroup();
                 }
@@ -95,7 +100,6 @@ function recupStation(map) {
                     .on('click', function () {
                         horaires(station)
                             .then(function (horaire_dest) {
-                                console.log(horaires(station))
                                 var horaire = refactorDate(horaire_dest[0]);
                                 var dest = horaire_dest[1];
                                 marker.setPopupContent(nomstation + "<br\>En destination de : " + dest + "<br\>Prochain métro à : " + horaire);
@@ -105,8 +109,8 @@ function recupStation(map) {
                             });
                     });
                 routeLayers[routeLongName].addLayer(marker);
+                stations.push({nom: nomstation, coord: [latitud, longitud], ligne: routeLongName, couleur:color});
             });
-
             for (var route in routeLayers) {
                 overlayMaps[route] = routeLayers[route];
             }
@@ -147,13 +151,14 @@ function createDrag(map){
         iconAnchor: [16, 20],
         popupAnchor: [0, -20]
     });
-    return new L.Marker(coordIUT, {
+    return new L.Marker(coordParis, {
         draggable: true,
         icon: aDragIcon
     }).addTo(map);
 }
 
 function manageDrag(aDrag){
+    let line;
     aDrag.bindPopup("<b>Coucou !</b><br>Je suis ton avatar :D").openPopup();
     aDrag.on('drag', function() {
         this.bindPopup("<b>Dépose-moi sur la carte !</b>").openPopup();
@@ -163,9 +168,14 @@ function manageDrag(aDrag){
         try {
             var response = await fetch(link);
             var data = await response.json();
-            console.log(data);
             var ville;
-            if(data.address.city){ville=data.address.city}else if(data.address.town){ville=data.address.town}else{ville=data.address.village}
+            if(data.address.city){
+                ville=data.address.city
+            }else if(data.address.town){
+                ville=data.address.town
+            }else{
+                ville=data.address.village
+            }
             this.bindPopup("<b>Ma position :</b><br>" + data.address.road + ", " + ville).openPopup();
         } catch (error) {
             console.error("Error fetching or parsing data:", error);
@@ -177,11 +187,11 @@ function manageDrag(aDrag){
 function extraireNumerosStopId(stopId) {
     // Utilisation d'une expression régulière pour extraire les numéros
     const numeros = stopId.match(/\d+/);
-  
+
     // Si des numéros sont trouvés, renvoyer le premier numéro trouvé
     // Sinon, renvoyer null ou une valeur par défaut selon vos besoins
     return numeros ? numeros[0] : null;
-  }
+}
 
 // ***************************** PARTIE POUR LES METROS - EYCI *****************************
 
@@ -192,7 +202,6 @@ function horaires(station) {
 
     var stationID = station.stop_id;
 
-    console.log(stationID);
     stationID = extraireNumerosStopId(stationID);
 
     var traffic_url = 'https://prim.iledefrance-mobilites.fr/marketplace/stop-monitoring?MonitoringRef=STIF%3AStopPoint%3AQ%3A' + stationID + '%3A';
@@ -354,16 +363,61 @@ function addHoraireUser(){
             function (horaire_dest) {
                 var horaire = refactorDate(horaire_dest[0])
                 element.innerHTML = horaire
+
             });
     });
 
 }
+let stationMap = new Map();
+function getStationLineName(station, line) {
+    var cleanedStation = station.replace(/ |-/g, '');
+    return cleanedStation + " (" + line + ")";
+}
 
-function activePolyline(map, coordAvatar){
-    let latlngs = [
-        coordIUT,
-        coordAvatar
-    ];
+function loadStationMap() {
+    $.ajax({
+        type: "GET",
+        url: "./static/refs/arrets.json",
+        dataType: "json",
+        success: function (data) {
+            for (let station of data) {
+                stationMap.set(getStationLineName(station.stop_name, station.route_long_name), {
+                    latitud: station.pointgeo.lat,
+                    longitud: station.pointgeo.lon,
+                    line: station.route_long_name,
+                });
+            }
+        },
+        error: function (error) {
+            console.error(error);
+        }
+    });
+}
 
-     L.polyline(latlngs, {color: 'red'}).addTo(map);
+function getCoordinates(station, line) {
+    return stationMap.get(getStationLineName(station, line));
+}
+function line(){
+    $.ajax({
+        type: "GET",
+        url: "./static/refs/lien-station.json",
+        dataType: "json",
+        success: function (data) {
+            data.forEach(function (station) {
+                console.log(station.station1)
+                let st1 = getCoordinates(station.station1, station.line);
+                console.log(station.station2)
+                let st2 = getCoordinates(station.station2, station.line);
+                let latlngs = [
+                    [st1.latitud, st1.longitud],
+                    [st2.latitud, st2.longitud]
+                ];
+                let polyline = L.polyline(latlngs, {color: getcolor(station.line)}).addTo(map);
+            });
+
+        },
+        error: function (error) {
+            console.error(error);
+        }
+    });
 }

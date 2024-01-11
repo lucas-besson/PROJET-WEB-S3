@@ -1,0 +1,1822 @@
+[
+  {
+    "station1": "Abbesses",
+    "station2": "Pigalle",
+    "line": "12"
+  },
+  {
+    "station1": "Abbesses",
+    "station2": "Lamarck - Caulaincourt",
+    "line": "12"
+  },
+  {
+    "station1": "Alexandre Dumas",
+    "station2": "Avron",
+    "line": "2"
+  },
+  {
+    "station1": "Alexandre Dumas",
+    "station2": "Philippe Auguste",
+    "line": "2"
+  },
+  {
+    "station1": "Alma - Marceau",
+    "station2": "Franklin D. Roosevelt",
+    "line": "9"
+  },
+  {
+    "station1": "Alma - Marceau",
+    "station2": "Iéna",
+    "line": "9"
+  },
+  {
+    "station1": "Alésia",
+    "station2": "Porte d'Orléans",
+    "line": "4"
+  },
+  {
+    "station1": "Alésia",
+    "station2": "Mouton-Duvernet",
+    "line": "4"
+  },
+  {
+    "station1": "Anatole France",
+    "station2": "Louise Michel",
+    "line": "3"
+  },
+  {
+    "station1": "Anatole France",
+    "station2": "Pont de Levallois - Bécon",
+    "line": "3"
+  },
+  {
+    "station1": "Anvers",
+    "station2": "Barbès - Rochechouart",
+    "line": "2"
+  },
+  {
+    "station1": "Anvers",
+    "station2": "Pigalle",
+    "line": "2"
+  },
+  {
+    "station1": "Argentine",
+    "station2": "Charles de Gaulle - Etoile",
+    "line": "1"
+  },
+  {
+    "station1": "Argentine",
+    "station2": "Porte Maillot",
+    "line": "1"
+  },
+  {
+    "station1": "Arts et Métiers",
+    "station2": "Rambuteau",
+    "line": "11"
+  },
+  {
+    "station1": "Arts et Métiers",
+    "station2": "République",
+    "line": "11"
+  },
+  {
+    "station1": "Arts et Métiers",
+    "station2": "Temple",
+    "line": "3"
+  },
+  {
+    "station1": "Arts et Métiers",
+    "station2": "Réaumur - Sébastopol",
+    "line": "3"
+  },
+  {
+    "station1": "Assemblée Nationale",
+    "station2": "Solférino",
+    "line": "12"
+  },
+  {
+    "station1": "Assemblée Nationale",
+    "station2": "Concorde",
+    "line": "12"
+  },
+  {
+    "station1": "Aubervilliers-Pantin Quatre Chemins",
+    "station2": "Porte de la Villette",
+    "line": "7"
+  },
+  {
+    "station1": "Aubervilliers-Pantin Quatre Chemins",
+    "station2": "Fort d'Aubervilliers",
+    "line": "7"
+  },
+  {
+    "station1": "Avenue Émile Zola",
+    "station2": "La Motte-Picquet - Grenelle",
+    "line": "10"
+  },
+  {
+    "station1": "Avenue Émile Zola",
+    "station2": "Charles Michels",
+    "line": "10"
+  },
+  {
+    "station1": "Avron",
+    "station2": "Nation",
+    "line": "2"
+  },
+  {
+    "station1": "Barbès - Rochechouart",
+    "station2": "La Chapelle",
+    "line": "2"
+  },
+  {
+    "station1": "Barbès - Rochechouart",
+    "station2": "Gare du Nord",
+    "line": "4"
+  },
+  {
+    "station1": "Barbès - Rochechouart",
+    "station2": "Château Rouge",
+    "line": "4"
+  },
+  {
+    "station1": "Basilique de Saint-Denis",
+    "station2": "Saint-Denis - Porte de Paris",
+    "line": "13"
+  },
+  {
+    "station1": "Basilique de Saint-Denis",
+    "station2": "Saint-Denis - Université",
+    "line": "13"
+  },
+  {
+    "station1": "Bastille",
+    "station2": "Gare de Lyon",
+    "line": "1"
+  },
+  {
+    "station1": "Bastille",
+    "station2": "Saint-Paul (Le Marais)",
+    "line": "1"
+  },
+  {
+    "station1": "Bastille",
+    "station2": "Quai de la Rapée",
+    "line": "5"
+  },
+  {
+    "station1": "Bastille",
+    "station2": "Bréguet-Sabin",
+    "line": "5"
+  },
+  {
+    "station1": "Bastille",
+    "station2": "Ledru-Rollin",
+    "line": "8"
+  },
+  {
+    "station1": "Bastille",
+    "station2": "Chemin Vert",
+    "line": "8"
+  },
+  {
+    "station1": "Bel-Air",
+    "station2": "Picpus",
+    "line": "6"
+  },
+  {
+    "station1": "Bel-Air",
+    "station2": "Daumesnil",
+    "line": "6"
+  },
+  {
+    "station1": "Belleville",
+    "station2": "Goncourt",
+    "line": "11"
+  },
+  {
+    "station1": "Belleville",
+    "station2": "Pyrénées",
+    "line": "11"
+  },
+  {
+    "station1": "Belleville",
+    "station2": "Couronnes",
+    "line": "2"
+  },
+  {
+    "station1": "Belleville",
+    "station2": "Colonel Fabien",
+    "line": "2"
+  },
+  {
+    "station1": "Bercy",
+    "station2": "Cour Saint-Emilion",
+    "line": "14"
+  },
+  {
+    "station1": "Bercy",
+    "station2": "Gare de Lyon",
+    "line": "14"
+  },
+  {
+    "station1": "Bercy",
+    "station2": "Dugommier",
+    "line": "6"
+  },
+  {
+    "station1": "Bercy",
+    "station2": "Quai de la Gare",
+    "line": "6"
+  },
+  {
+    "station1": "Bibliothèque François Mitterrand",
+    "station2": "Cour Saint-Emilion",
+    "line": "14"
+  },
+  {
+    "station1": "Billancourt",
+    "station2": "Marcel Sembat",
+    "line": "9"
+  },
+  {
+    "station1": "Billancourt",
+    "station2": "Pont de Sèvres",
+    "line": "9"
+  },
+  {
+    "station1": "Bir-Hakeim",
+    "station2": "Dupleix",
+    "line": "6"
+  },
+  {
+    "station1": "Bir-Hakeim",
+    "station2": "Passy",
+    "line": "6"
+  },
+  {
+    "station1": "Blanche",
+    "station2": "Pigalle",
+    "line": "2"
+  },
+  {
+    "station1": "Blanche",
+    "station2": "Place de Clichy",
+    "line": "2"
+  },
+  {
+    "station1": "Bobigny Pablo Picasso",
+    "station2": "Bobigny-Pantin - Raymond Queneau",
+    "line": "5"
+  },
+  {
+    "station1": "Bobigny-Pantin - Raymond Queneau",
+    "station2": "Église de Pantin",
+    "line": "5"
+  },
+  {
+    "station1": "Boissière",
+    "station2": "Trocadéro",
+    "line": "6"
+  },
+  {
+    "station1": "Boissière",
+    "station2": "Kléber",
+    "line": "6"
+  },
+  {
+    "station1": "Bonne Nouvelle",
+    "station2": "Strasbourg - Saint-Denis",
+    "line": "8"
+  },
+  {
+    "station1": "Bonne Nouvelle",
+    "station2": "Grands Boulevards",
+    "line": "8"
+  },
+  {
+    "station1": "Bonne Nouvelle",
+    "station2": "Strasbourg - Saint-Denis",
+    "line": "9"
+  },
+  {
+    "station1": "Bonne Nouvelle",
+    "station2": "Grands Boulevards",
+    "line": "9"
+  },
+  {
+    "station1": "Boucicaut",
+    "station2": "Félix Faure",
+    "line": "8"
+  },
+  {
+    "station1": "Boucicaut",
+    "station2": "Lourmel",
+    "line": "8"
+  },
+  {
+    "station1": "Boulogne Jean Jaurès",
+    "station2": "Michel-Ange - Molitor",
+    "line": "10"
+  },
+  {
+    "station1": "Boulogne Jean Jaurès",
+    "station2": "Boulogne Pont de Saint-Cloud",
+    "line": "10"
+  },
+  {
+    "station1": "Bourse",
+    "station2": "Sentier",
+    "line": "3"
+  },
+  {
+    "station1": "Bourse",
+    "station2": "Quatre Septembre",
+    "line": "3"
+  },
+  {
+    "station1": "Brochant",
+    "station2": "La Fourche",
+    "line": "13"
+  },
+  {
+    "station1": "Brochant",
+    "station2": "Porte de Clichy",
+    "line": "13"
+  },
+  {
+    "station1": "Bréguet-Sabin",
+    "station2": "Richard-Lenoir",
+    "line": "5"
+  },
+  {
+    "station1": "Buzenval",
+    "station2": "Maraîchers",
+    "line": "9"
+  },
+  {
+    "station1": "Buzenval",
+    "station2": "Nation",
+    "line": "9"
+  },
+  {
+    "station1": "Bérault",
+    "station2": "Château de Vincennes",
+    "line": "1"
+  },
+  {
+    "station1": "Bérault",
+    "station2": "Saint-Mandé",
+    "line": "1"
+  },
+  {
+    "station1": "Cadet",
+    "station2": "Le Peletier",
+    "line": "7"
+  },
+  {
+    "station1": "Cadet",
+    "station2": "Poissonnière",
+    "line": "7"
+  },
+  {
+    "station1": "Cambronne",
+    "station2": "Sèvres-Lecourbe",
+    "line": "6"
+  },
+  {
+    "station1": "Cambronne",
+    "station2": "La Motte-Picquet - Grenelle",
+    "line": "6"
+  },
+  {
+    "station1": "Campo-Formio",
+    "station2": "Place d'Italie",
+    "line": "5"
+  },
+  {
+    "station1": "Campo-Formio",
+    "station2": "Saint-Marcel",
+    "line": "5"
+  },
+  {
+    "station1": "Cardinal Lemoine",
+    "station2": "Jussieu",
+    "line": "10"
+  },
+  {
+    "station1": "Cardinal Lemoine",
+    "station2": "Maubert - Mutualité",
+    "line": "10"
+  },
+  {
+    "station1": "Carrefour Pleyel",
+    "station2": "Mairie de Saint-Ouen",
+    "line": "13"
+  },
+  {
+    "station1": "Carrefour Pleyel",
+    "station2": "Saint-Denis - Porte de Paris",
+    "line": "13"
+  },
+  {
+    "station1": "Censier - Daubenton",
+    "station2": "Les Gobelins",
+    "line": "7"
+  },
+  {
+    "station1": "Censier - Daubenton",
+    "station2": "Place Monge",
+    "line": "7"
+  },
+  {
+    "station1": "Champs-\u00c9lys\u00e9es - Clemenceau",
+    "station2": "Concorde",
+    "line": "1"
+  },
+  {
+    "station1": "Champs-\u00c9lys\u00e9es - Clemenceau",
+    "station2": "Franklin D. Roosevelt",
+    "line": "1"
+  },
+  {
+    "station1": "Champs-\u00c9lys\u00e9es - Clemenceau",
+    "station2": "Invalides",
+    "line": "13"
+  },
+  {
+    "station1": "Champs-\u00c9lys\u00e9es - Clemenceau",
+    "station2": "Miromesnil",
+    "line": "13"
+  },
+  {
+    "station1": "Chardon Lagache",
+    "station2": "Mirabeau",
+    "line": "10"
+  },
+  {
+    "station1": "Charenton-Écoles",
+    "station2": "Ecole V\u00e9t\u00e9rinaire de Maisons-Alfort",
+    "line": "8"
+  },
+  {
+    "station1": "Charenton-Écoles",
+    "station2": "Liberté",
+    "line": "8"
+  },
+  {
+    "station1": "Charles Michels",
+    "station2": "Javel - André Citroën",
+    "line": "10"
+  },
+  {
+    "station1": "Charles de Gaulle-Etoile",
+    "station2": "George V",
+    "line": "1"
+  },
+  {
+    "station1": "Charles de Gaulle-Etoile",
+    "station2": "Ternes",
+    "line": "2"
+  },
+  {
+    "station1": "Charles de Gaulle-Etoile",
+    "station2": "Victor Hugo",
+    "line": "2"
+  },
+  {
+    "station1": "Charles de Gaulle-Etoile",
+    "station2": "Kléber",
+    "line": "6"
+  },
+  {
+    "station1": "Charonne",
+    "station2": "Rue des Boulets",
+    "line": "9"
+  },
+  {
+    "station1": "Charonne",
+    "station2": "Voltaire",
+    "line": "9"
+  },
+  {
+    "station1": "Chaussée d'Antin - La Fayette",
+    "station2": "Opéra",
+    "line": "7"
+  },
+  {
+    "station1": "Chaussée d'Antin - La Fayette",
+    "station2": "Le Peletier",
+    "line": "7"
+  },
+  {
+    "station1": "Chaussée d'Antin - La Fayette",
+    "station2": "Richelieu-Drouot",
+    "line": "9"
+  },
+  {
+    "station1": "Chaussée d'Antin - La Fayette",
+    "station2": "Havre-Caumartin",
+    "line": "9"
+  },
+  {
+    "station1": "Chemin Vert",
+    "station2": "Saint-Sébastien-Froissart",
+    "line": "8"
+  },
+  {
+    "station1": "Chevaleret",
+    "station2": "Quai de la Gare",
+    "line": "6"
+  },
+  {
+    "station1": "Chevaleret",
+    "station2": "Nationale",
+    "line": "6"
+  },
+  {
+    "station1": "Château-Landon",
+    "station2": "Gare de l'Est",
+    "line": "7"
+  },
+  {
+    "station1": "Château-Landon",
+    "station2": "Louis Blanc",
+    "line": "7"
+  },
+  {
+    "station1": "Château Rouge",
+    "station2": "Marcadet-Poissonniers",
+    "line": "4"
+  },
+  {
+    "station1": "Château d'Eau",
+    "station2": "Strasbourg - Saint-Denis",
+    "line": "4"
+  },
+  {
+    "station1": "Château d'Eau",
+    "station2": "Gare de l'Est",
+    "line": "4"
+  },
+  {
+    "station1": "Ch\u00e2telet",
+    "station2": "H\u00f4tel de Ville",
+    "line": "1"
+  },
+  {
+    "station1": "Ch\u00e2telet",
+    "station2": "Louvre-Rivoli",
+    "line": "1"
+  },
+  {
+    "station1": "Ch\u00e2telet",
+    "station2": "H\u00f4tel de Ville",
+    "line": "11"
+  },
+  {
+    "station1": "Ch\u00e2telet",
+    "station2": "Gare de Lyon",
+    "line": "14"
+  },
+  {
+    "station1": "Ch\u00e2telet",
+    "station2": "Pyramides",
+    "line": "14"
+  },
+  {
+    "station1": "Ch\u00e2telet",
+    "station2": "Cité",
+    "line": "4"
+  },
+  {
+    "station1": "Ch\u00e2telet",
+    "station2": "Les Halles",
+    "line": "4"
+  },
+  {
+    "station1": "Ch\u00e2telet",
+    "station2": "Pont Marie (Cit\u00e9 des Arts)",
+    "line": "7"
+  },
+  {
+    "station1": "Ch\u00e2telet",
+    "station2": "Pont Neuf",
+    "line": "7"
+  },
+  {
+    "station1": "Châtillon-Montrouge",
+    "station2": "Malakoff - Rue Etienne Dolet",
+    "line": "13"
+  },
+  {
+    "station1": "Cité",
+    "station2": "Saint-Michel",
+    "line": "4"
+  },
+  {
+    "station1": "Cluny-La Sorbonne",
+    "station2": "Maubert - Mutualité",
+    "line": "10"
+  },
+  {
+    "station1": "Cluny-La Sorbonne",
+    "station2": "Odéon",
+    "line": "10"
+  },
+  {
+    "station1": "Colonel Fabien",
+    "station2": "Jaurès",
+    "line": "2"
+  },
+  {
+    "station1": "Commerce",
+    "station2": "La Motte-Picquet - Grenelle",
+    "line": "8"
+  },
+  {
+    "station1": "Commerce",
+    "station2": "Félix Faure",
+    "line": "8"
+  },
+  {
+    "station1": "Concorde",
+    "station2": "Tuileries",
+    "line": "1"
+  },
+  {
+    "station1": "Concorde",
+    "station2": "Madeleine",
+    "line": "12"
+  },
+  {
+    "station1": "Concorde",
+    "station2": "Madeleine",
+    "line": "8"
+  },
+  {
+    "station1": "Concorde",
+    "station2": "Invalides",
+    "line": "8"
+  },
+  {
+    "station1": "Convention",
+    "station2": "Porte de Versailles",
+    "line": "12"
+  },
+  {
+    "station1": "Convention",
+    "station2": "Vaugirard",
+    "line": "12"
+  },
+  {
+    "station1": "Corentin Celton",
+    "station2": "Mairie d'Issy",
+    "line": "12"
+  },
+  {
+    "station1": "Corentin Celton",
+    "station2": "Porte de Versailles",
+    "line": "12"
+  },
+  {
+    "station1": "Corentin Cariou",
+    "station2": "Crimée",
+    "line": "7"
+  },
+  {
+    "station1": "Corentin Cariou",
+    "station2": "Porte de la Villette",
+    "line": "7"
+  },
+  {
+    "station1": "Corvisart",
+    "station2": "Place d'Italie",
+    "line": "6"
+  },
+  {
+    "station1": "Corvisart",
+    "station2": "Glacière",
+    "line": "6"
+  },
+  {
+    "station1": "Courcelles",
+    "station2": "Monceau",
+    "line": "2"
+  },
+  {
+    "station1": "Courcelles",
+    "station2": "Ternes",
+    "line": "2"
+  },
+  {
+    "station1": "Couronnes",
+    "station2": "Ménilmontant",
+    "line": "2"
+  },
+  {
+    "station1": "Crimée",
+    "station2": "Riquet",
+    "line": "7"
+  },
+  {
+    "station1": "Croix de Chavaux",
+    "station2": "Mairie de Montreuil",
+    "line": "9"
+  },
+  {
+    "station1": "Croix de Chavaux",
+    "station2": "Robespierre",
+    "line": "9"
+  },
+  {
+    "station1": "Cr\u00e9teil - Pr\u00e9fecture",
+    "station2": "Créteil-Université",
+    "line": "8"
+  },
+  {
+    "station1": "Créteil-Université",
+    "station2": "Cr\u00e9teil - L'\u00c9chat",
+    "line": "8"
+  },
+  {
+    "station1": "Cr\u00e9teil - L'\u00c9chat",
+    "station2": "Maisons-Alfort-Les Juilliottes",
+    "line": "8"
+  },
+  {
+    "station1": "Daumesnil",
+    "station2": "Dugommier",
+    "line": "6"
+  },
+  {
+    "station1": "Daumesnil",
+    "station2": "Michel Bizot",
+    "line": "8"
+  },
+  {
+    "station1": "Daumesnil",
+    "station2": "Montgallet",
+    "line": "8"
+  },
+  {
+    "station1": "Denfert-Rochereau",
+    "station2": "Mouton-Duvernet",
+    "line": "4"
+  },
+  {
+    "station1": "Denfert-Rochereau",
+    "station2": "Raspail",
+    "line": "4"
+  },
+  {
+    "station1": "Denfert-Rochereau",
+    "station2": "Saint-Jacques",
+    "line": "6"
+  },
+  {
+    "station1": "Denfert-Rochereau",
+    "station2": "Raspail",
+    "line": "6"
+  },
+  {
+    "station1": "Dupleix",
+    "station2": "La Motte-Picquet - Grenelle",
+    "line": "6"
+  },
+  {
+    "station1": "Duroc",
+    "station2": "Vaneau",
+    "line": "10"
+  },
+  {
+    "station1": "Duroc",
+    "station2": "Ségur",
+    "line": "10"
+  },
+  {
+    "station1": "Duroc",
+    "station2": "Montparnasse Bienvenue",
+    "line": "13"
+  },
+  {
+    "station1": "Duroc",
+    "station2": "Saint-François-Xavier",
+    "line": "13"
+  },
+  {
+    "station1": "Edgar Quinet",
+    "station2": "Raspail",
+    "line": "6"
+  },
+  {
+    "station1": "Edgar Quinet",
+    "station2": "Montparnasse Bienvenue",
+    "line": "6"
+  },
+  {
+    "station1": "Esplanade de la D\u00e9fense",
+    "station2": "Pont de Neuilly",
+    "line": "1"
+  },
+  {
+    "station1": "Esplanade de la D\u00e9fense",
+    "station2": "La D\u00e9fense (Grande Arche)",
+    "line": "1"
+  },
+  {
+    "station1": "Europe",
+    "station2": "Saint-Lazare",
+    "line": "3"
+  },
+  {
+    "station1": "Europe",
+    "station2": "Villiers",
+    "line": "3"
+  },
+  {
+    "station1": "Exelmans",
+    "station2": "Michel-Ange - Molitor",
+    "line": "9"
+  },
+  {
+    "station1": "Exelmans",
+    "station2": "Porte de Saint-Cloud",
+    "line": "9"
+  },
+  {
+    "station1": "Faidherbe Chaligny",
+    "station2": "Reuilly-Diderot",
+    "line": "8"
+  },
+  {
+    "station1": "Faidherbe Chaligny",
+    "station2": "Ledru-Rollin",
+    "line": "8"
+  },
+  {
+    "station1": "Falguière",
+    "station2": "Pasteur",
+    "line": "12"
+  },
+  {
+    "station1": "Falguière",
+    "station2": "Montparnasse Bienvenue",
+    "line": "12"
+  },
+  {
+    "station1": "Filles du Calvaire",
+    "station2": "Saint-Sébastien-Froissart",
+    "line": "8"
+  },
+  {
+    "station1": "Filles du Calvaire",
+    "station2": "République",
+    "line": "8"
+  },
+  {
+    "station1": "Fort d'Aubervilliers",
+    "station2": "La Courneuve 8 Mai 1945",
+    "line": "7"
+  },
+  {
+    "station1": "Franklin D. Roosevelt",
+    "station2": "George V",
+    "line": "1"
+  },
+  {
+    "station1": "Franklin D. Roosevelt",
+    "station2": "Saint-Philippe du Roule",
+    "line": "9"
+  },
+  {
+    "station1": "Gabriel Péri",
+    "station2": "Mairie de Clichy",
+    "line": "13"
+  },
+  {
+    "station1": "Ga\u00eet\u00e9",
+    "station2": "Pernety",
+    "line": "13"
+  },
+  {
+    "station1": "Ga\u00eet\u00e9",
+    "station2": "Montparnasse Bienvenue",
+    "line": "13"
+  },
+  {
+    "station1": "Gallieni",
+    "station2": "Porte de Bagnolet",
+    "line": "3"
+  },
+  {
+    "station1": "Gambetta",
+    "station2": "Porte de Bagnolet",
+    "line": "3"
+  },
+  {
+    "station1": "Gambetta",
+    "station2": "Père Lachaise",
+    "line": "3"
+  },
+  {
+    "station1": "Gare d'Austerlitz",
+    "station2": "Jussieu",
+    "line": "10"
+  },
+  {
+    "station1": "Gare d'Austerlitz",
+    "station2": "Saint-Marcel",
+    "line": "5"
+  },
+  {
+    "station1": "Gare d'Austerlitz",
+    "station2": "Quai de la Rapée",
+    "line": "5"
+  },
+  {
+    "station1": "Gare de Lyon",
+    "station2": "Reuilly-Diderot",
+    "line": "1"
+  },
+  {
+    "station1": "Gare de l'Est",
+    "station2": "Gare du Nord",
+    "line": "4"
+  },
+  {
+    "station1": "Gare de l'Est",
+    "station2": "Jacques Bonsergent",
+    "line": "5"
+  },
+  {
+    "station1": "Gare de l'Est",
+    "station2": "Gare du Nord",
+    "line": "5"
+  },
+  {
+    "station1": "Gare de l'Est",
+    "station2": "Poissonnière",
+    "line": "7"
+  },
+  {
+    "station1": "Gare du Nord",
+    "station2": "Stalingrad",
+    "line": "5"
+  },
+  {
+    "station1": "Garibaldi",
+    "station2": "Porte de Saint-Ouen",
+    "line": "13"
+  },
+  {
+    "station1": "Garibaldi",
+    "station2": "Mairie de Saint-Ouen",
+    "line": "13"
+  },
+  {
+    "station1": "Glacière",
+    "station2": "Saint-Jacques",
+    "line": "6"
+  },
+  {
+    "station1": "Goncourt",
+    "station2": "République",
+    "line": "11"
+  },
+  {
+    "station1": "Guy Môquet",
+    "station2": "La Fourche",
+    "line": "13"
+  },
+  {
+    "station1": "Guy Môquet",
+    "station2": "Porte de Saint-Ouen",
+    "line": "13"
+  },
+  {
+    "station1": "Havre-Caumartin",
+    "station2": "Opéra",
+    "line": "3"
+  },
+  {
+    "station1": "Havre-Caumartin",
+    "station2": "Saint-Lazare",
+    "line": "3"
+  },
+  {
+    "station1": "Havre-Caumartin",
+    "station2": "Saint-Augustin",
+    "line": "9"
+  },
+  {
+    "station1": "Hoche",
+    "station2": "Porte de Pantin",
+    "line": "5"
+  },
+  {
+    "station1": "Hoche",
+    "station2": "Église de Pantin",
+    "line": "5"
+  },
+  {
+    "station1": "H\u00f4tel de Ville",
+    "station2": "Saint-Paul (Le Marais)",
+    "line": "1"
+  },
+  {
+    "station1": "H\u00f4tel de Ville",
+    "station2": "Rambuteau",
+    "line": "11"
+  },
+  {
+    "station1": "Invalides",
+    "station2": "Varenne",
+    "line": "13"
+  },
+  {
+    "station1": "Invalides",
+    "station2": "La Tour Maubourg",
+    "line": "8"
+  },
+  {
+    "station1": "Iéna",
+    "station2": "Trocadéro",
+    "line": "9"
+  },
+  {
+    "station1": "Jacques Bonsergent",
+    "station2": "République",
+    "line": "5"
+  },
+  {
+    "station1": "Jasmin",
+    "station2": "Ranelagh",
+    "line": "9"
+  },
+  {
+    "station1": "Jasmin",
+    "station2": "Michel Ange-Auteuil",
+    "line": "9"
+  },
+  {
+    "station1": "Jaurès",
+    "station2": "Stalingrad",
+    "line": "2"
+  },
+  {
+    "station1": "Jaurès",
+    "station2": "Stalingrad",
+    "line": "5"
+  },
+  {
+    "station1": "Jaurès",
+    "station2": "Laumière",
+    "line": "5"
+  },
+  {
+    "station1": "Javel - André Citroën",
+    "station2": "Église d'Auteuil",
+    "line": "10"
+  },
+  {
+    "station1": "Jourdain",
+    "station2": "Pyrénées",
+    "line": "11"
+  },
+  {
+    "station1": "Jourdain",
+    "station2": "Place des Fêtes",
+    "line": "11"
+  },
+  {
+    "station1": "Jules Joffrin",
+    "station2": "Lamarck-Caulaincourt",
+    "line": "12"
+  },
+  {
+    "station1": "Jules Joffrin",
+    "station2": "Marcadet-Poissonniers",
+    "line": "12"
+  },
+  {
+    "station1": "Jussieu",
+    "station2": "Place Monge",
+    "line": "7"
+  },
+  {
+    "station1": "Jussieu",
+    "station2": "Sully-Morland",
+    "line": "7"
+  },
+  {
+    "station1": "La Chapelle",
+    "station2": "Stalingrad",
+    "line": "2"
+  },
+  {
+    "station1": "La Fourche",
+    "station2": "Place de Clichy",
+    "line": "13"
+  },
+  {
+    "station1": "La Motte-Picquet - Grenelle",
+    "station2": "Ségur",
+    "line": "10"
+  },
+  {
+    "station1": "La Motte-Picquet - Grenelle",
+    "station2": "École Militaire",
+    "line": "8"
+  },
+  {
+    "station1": "La Muette",
+    "station2": "Rue de la Pompe",
+    "line": "9"
+  },
+  {
+    "station1": "La Muette",
+    "station2": "Ranelagh",
+    "line": "9"
+  },
+  {
+    "station1": "La Tour Maubourg",
+    "station2": "École Militaire",
+    "line": "8"
+  },
+  {
+    "station1": "Laumière",
+    "station2": "Ourcq",
+    "line": "5"
+  },
+  {
+    "station1": "Le Kremlin-Bicêtre",
+    "station2": "Villejuif - Léo Lagrange",
+    "line": "7"
+  },
+  {
+    "station1": "Le Kremlin-Bicêtre",
+    "station2": "Maison Blanche",
+    "line": "7"
+  },
+  {
+    "station1": "Les Gobelins",
+    "station2": "Place d'Italie",
+    "line": "7"
+  },
+  {
+    "station1": "Les Halles",
+    "station2": "Etienne Marcel",
+    "line": "4"
+  },
+  {
+    "station1": "Les Sablons",
+    "station2": "Porte Maillot",
+    "line": "1"
+  },
+  {
+    "station1": "Les Sablons",
+    "station2": "Pont de Neuilly",
+    "line": "1"
+  },
+  {
+    "station1": "Liberté",
+    "station2": "Porte de Charenton",
+    "line": "8"
+  },
+  {
+    "station1": "Liège",
+    "station2": "Saint-Lazare",
+    "line": "13"
+  },
+  {
+    "station1": "Liège",
+    "station2": "Place de Clichy",
+    "line": "13"
+  },
+  {
+    "station1": "Louis Blanc",
+    "station2": "Stalingrad",
+    "line": "7"
+  },
+  {
+    "station1": "Louise Michel",
+    "station2": "Porte de Champerret",
+    "line": "3"
+  },
+  {
+    "station1": "Lourmel",
+    "station2": "Balard",
+    "line": "8"
+  },
+  {
+    "station1": "Louvre-Rivoli",
+    "station2": "Palais Royal - Musée du Louvre",
+    "line": "1"
+  },
+  {
+    "station1": "Mabillon",
+    "station2": "Odéon",
+    "line": "10"
+  },
+  {
+    "station1": "Mabillon",
+    "station2": "Sèvres-Babylone",
+    "line": "10"
+  },
+  {
+    "station1": "Madeleine",
+    "station2": "Saint-Lazare",
+    "line": "12"
+  },
+  {
+    "station1": "Madeleine",
+    "station2": "Pyramides",
+    "line": "14"
+  },
+  {
+    "station1": "Madeleine",
+    "station2": "Opéra",
+    "line": "8"
+  },
+  {
+    "station1": "Mairie d'Ivry",
+    "station2": "Pierre et Marie Curie",
+    "line": "7"
+  },
+  {
+    "station1": "Mairie de Clichy",
+    "station2": "Porte de Clichy",
+    "line": "13"
+  },
+  {
+    "station1": "Mairie des Lilas",
+    "station2": "Porte des Lilas",
+    "line": "11"
+  },
+  {
+    "station1": "Maison Blanche",
+    "station2": "Porte d'Italie",
+    "line": "7"
+  },
+  {
+    "station1": "Maison Blanche",
+    "station2": "Tolbiac",
+    "line": "7"
+  },
+  {
+    "station1": "Maisons-Alfort-Les Juilliottes",
+    "station2": "Maisons-Alfort-Stade",
+    "line": "8"
+  },
+  {
+    "station1": "Maisons-Alfort-Stade",
+    "station2": "Ecole V\u00e9t\u00e9rinaire de Maisons-Alfort",
+    "line": "8"
+  },
+  {
+    "station1": "Malakoff - Plateau de Vanves",
+    "station2": "Malakoff - Rue Etienne Dolet",
+    "line": "13"
+  },
+  {
+    "station1": "Malakoff - Plateau de Vanves",
+    "station2": "Porte de Vanves",
+    "line": "13"
+  },
+  {
+    "station1": "Malesherbes",
+    "station2": "Villiers",
+    "line": "3"
+  },
+  {
+    "station1": "Malesherbes",
+    "station2": "Wagram",
+    "line": "3"
+  },
+  {
+    "station1": "Maraîchers",
+    "station2": "Porte de Montreuil",
+    "line": "9"
+  },
+  {
+    "station1": "Marcadet-Poissonniers",
+    "station2": "Marx Dormoy",
+    "line": "12"
+  },
+  {
+    "station1": "Marcadet-Poissonniers",
+    "station2": "Simplon",
+    "line": "4"
+  },
+  {
+    "station1": "Marcel Sembat",
+    "station2": "Porte de Saint-Cloud",
+    "line": "9"
+  },
+  {
+    "station1": "Marx Dormoy",
+    "station2": "Porte de la Chapelle",
+    "line": "12"
+  },
+  {
+    "station1": "Michel Ange-Auteuil",
+    "station2": "Porte d'Auteuil",
+    "line": "10"
+  },
+  {
+    "station1": "Michel Ange-Auteuil",
+    "station2": "Michel-Ange - Molitor",
+    "line": "9"
+  },
+  {
+    "station1": "Michel-Ange - Molitor",
+    "station2": "Chardon Lagache",
+    "line": "10"
+  },
+  {
+    "station1": "Michel Bizot",
+    "station2": "Porte Dorée",
+    "line": "8"
+  },
+  {
+    "station1": "Mirabeau",
+    "station2": "Javel - André Citroën",
+    "line": "10"
+  },
+  {
+    "station1": "Miromesnil",
+    "station2": "Saint-Lazare",
+    "line": "13"
+  },
+  {
+    "station1": "Miromesnil",
+    "station2": "Saint-Augustin",
+    "line": "9"
+  },
+  {
+    "station1": "Miromesnil",
+    "station2": "Saint-Philippe du Roule",
+    "line": "9"
+  },
+  {
+    "station1": "Monceau",
+    "station2": "Villiers",
+    "line": "2"
+  },
+  {
+    "station1": "Montgallet",
+    "station2": "Reuilly-Diderot",
+    "line": "8"
+  },
+  {
+    "station1": "Montparnasse Bienvenue",
+    "station2": "Notre-Dame-des-Champs",
+    "line": "12"
+  },
+  {
+    "station1": "Montparnasse Bienvenue",
+    "station2": "Vavin",
+    "line": "4"
+  },
+  {
+    "station1": "Montparnasse Bienvenue",
+    "station2": "Saint-Placide",
+    "line": "4"
+  },
+  {
+    "station1": "Montparnasse Bienvenue",
+    "station2": "Pasteur",
+    "line": "6"
+  },
+  {
+    "station1": "Ménilmontant",
+    "station2": "Père Lachaise",
+    "line": "2"
+  },
+  {
+    "station1": "Nation",
+    "station2": "Porte de Vincennes",
+    "line": "1"
+  },
+  {
+    "station1": "Nation",
+    "station2": "Reuilly-Diderot",
+    "line": "1"
+  },
+  {
+    "station1": "Nation",
+    "station2": "Picpus",
+    "line": "6"
+  },
+  {
+    "station1": "Nation",
+    "station2": "Rue des Boulets",
+    "line": "9"
+  },
+  {
+    "station1": "Nationale",
+    "station2": "Place d'Italie",
+    "line": "6"
+  },
+  {
+    "station1": "Notre-Dame-de-Lorette",
+    "station2": "Trinité d'Estienne d'Orves",
+    "line": "12"
+  },
+  {
+    "station1": "Notre-Dame-de-Lorette",
+    "station2": "Saint-Georges",
+    "line": "12"
+  },
+  {
+    "station1": "Notre-Dame-des-Champs",
+    "station2": "Rennes",
+    "line": "12"
+  },
+  {
+    "station1": "Oberkampf",
+    "station2": "Richard-Lenoir",
+    "line": "5"
+  },
+  {
+    "station1": "Oberkampf",
+    "station2": "République",
+    "line": "5"
+  },
+  {
+    "station1": "Oberkampf",
+    "station2": "Saint-Ambroise",
+    "line": "9"
+  },
+  {
+    "station1": "Oberkampf",
+    "station2": "République",
+    "line": "9"
+  },
+  {
+    "station1": "Odéon",
+    "station2": "Saint-Germain-des-Prés",
+    "line": "4"
+  },
+  {
+    "station1": "Odéon",
+    "station2": "Saint-Michel",
+    "line": "4"
+  },
+  {
+    "station1": "Opéra",
+    "station2": "Quatre Septembre",
+    "line": "3"
+  },
+  {
+    "station1": "Opéra",
+    "station2": "Pyramides",
+    "line": "7"
+  },
+  {
+    "station1": "Opéra",
+    "station2": "Richelieu-Drouot",
+    "line": "8"
+  },
+  {
+    "station1": "Ourcq",
+    "station2": "Porte de Pantin",
+    "line": "5"
+  },
+  {
+    "station1": "Palais Royal - Musée du Louvre",
+    "station2": "Tuileries",
+    "line": "1"
+  },
+  {
+    "station1": "Palais Royal - Musée du Louvre",
+    "station2": "Pont Neuf",
+    "line": "7"
+  },
+  {
+    "station1": "Palais Royal - Musée du Louvre",
+    "station2": "Pyramides",
+    "line": "7"
+  },
+  {
+    "station1": "Parmentier",
+    "station2": "Rue Saint-Maur",
+    "line": "3"
+  },
+  {
+    "station1": "Parmentier",
+    "station2": "République",
+    "line": "3"
+  },
+  {
+    "station1": "Passy",
+    "station2": "Trocadéro",
+    "line": "6"
+  },
+  {
+    "station1": "Pasteur",
+    "station2": "Volontaires",
+    "line": "12"
+  },
+  {
+    "station1": "Pasteur",
+    "station2": "Sèvres-Lecourbe",
+    "line": "6"
+  },
+  {
+    "station1": "Pernety",
+    "station2": "Plaisance",
+    "line": "13"
+  },
+  {
+    "station1": "Philippe Auguste",
+    "station2": "Père Lachaise",
+    "line": "2"
+  },
+  {
+    "station1": "Pierre et Marie Curie",
+    "station2": "Porte d'Ivry",
+    "line": "7"
+  },
+  {
+    "station1": "Pigalle",
+    "station2": "Saint-Georges",
+    "line": "12"
+  },
+  {
+    "station1": "Place d'Italie",
+    "station2": "Tolbiac",
+    "line": "7"
+  },
+  {
+    "station1": "Place de Clichy",
+    "station2": "Rome",
+    "line": "2"
+  },
+  {
+    "station1": "Place des Fêtes",
+    "station2": "Télégraphe",
+    "line": "11"
+  },
+  {
+    "station1": "Plaisance",
+    "station2": "Porte de Vanves",
+    "line": "13"
+  },
+  {
+    "station1": "Pont Marie (Cit\u00e9 des Arts)",
+    "station2": "Sully-Morland",
+    "line": "7"
+  },
+  {
+    "station1": "Porte Dauphine",
+    "station2": "Victor Hugo",
+    "line": "2"
+  },
+  {
+    "station1": "Porte Dorée",
+    "station2": "Porte de Charenton",
+    "line": "8"
+  },
+  {
+    "station1": "Porte d'Auteuil",
+    "station2": "Michel-Ange - Molitor",
+    "line": "10"
+  },
+  {
+    "station1": "Porte d'Auteuil",
+    "station2": "Boulogne Jean Jaurès",
+    "line": "10"
+  },
+  {
+    "station1": "Porte d'Italie",
+    "station2": "Porte de Choisy",
+    "line": "7"
+  },
+  {
+    "station1": "Porte d'Ivry",
+    "station2": "Porte de Choisy",
+    "line": "7"
+  },
+  {
+    "station1": "Porte de Champerret",
+    "station2": "Pont de Levallois - B\u00e9con",
+    "line": "3"
+  },
+  {
+    "station1": "Porte de Clignancourt",
+    "station2": "Simplon",
+    "line": "4"
+  },
+  {
+    "station1": "Porte de Montreuil",
+    "station2": "Robespierre",
+    "line": "9"
+  },
+  {
+    "station1": "Porte de Vincennes",
+    "station2": "Saint-Mandé",
+    "line": "1"
+  },
+  {
+    "station1": "Porte des Lilas",
+    "station2": "Télégraphe",
+    "line": "11"
+  },
+  {
+    "station1": "Père Lachaise",
+    "station2": "Rue Saint-Maur",
+    "line": "3"
+  },
+  {
+    "station1": "Pont de Levallois - B\u00e9con",
+    "station2": "Wagram",
+    "line": "3"
+  },
+  {
+    "station1": "Raspail",
+    "station2": "Vavin",
+    "line": "4"
+  },
+  {
+    "station1": "Rennes",
+    "station2": "Sèvres-Babylone",
+    "line": "12"
+  },
+  {
+    "station1": "Richelieu-Drouot",
+    "station2": "Grands Boulevards",
+    "line": "8"
+  },
+  {
+    "station1": "Richelieu-Drouot",
+    "station2": "Grands Boulevards",
+    "line": "9"
+  },
+  {
+    "station1": "Riquet",
+    "station2": "Stalingrad",
+    "line": "7"
+  },
+  {
+    "station1": "Rome",
+    "station2": "Villiers",
+    "line": "2"
+  },
+  {
+    "station1": "Rue de la Pompe",
+    "station2": "Trocadéro",
+    "line": "9"
+  },
+  {
+    "station1": "Rue du Bac",
+    "station2": "Sèvres-Babylone",
+    "line": "12"
+  },
+  {
+    "station1": "Rue du Bac",
+    "station2": "Solférino",
+    "line": "12"
+  },
+  {
+    "station1": "Réaumur-Sébastopol",
+    "station2": "Sentier",
+    "line": "3"
+  },
+  {
+    "station1": "Réaumur-Sébastopol",
+    "station2": "Etienne Marcel",
+    "line": "4"
+  },
+  {
+    "station1": "Réaumur-Sébastopol",
+    "station2": "Strasbourg - Saint-Denis",
+    "line": "4"
+  },
+  {
+    "station1": "République",
+    "station2": "Temple",
+    "line": "3"
+  },
+  {
+    "station1": "République",
+    "station2": "Strasbourg - Saint-Denis",
+    "line": "8"
+  },
+  {
+    "station1": "République",
+    "station2": "Strasbourg - Saint-Denis",
+    "line": "9"
+  },
+  {
+    "station1": "Saint-Ambroise",
+    "station2": "Voltaire",
+    "line": "9"
+  },
+  {
+    "station1": "Saint-François-Xavier",
+    "station2": "Varenne",
+    "line": "13"
+  },
+  {
+    "station1": "Saint-Germain-des-Prés",
+    "station2": "Saint-Sulpice",
+    "line": "4"
+  },
+  {
+    "station1": "Saint-Lazare",
+    "station2": "Trinité d'Estienne d'Orves",
+    "line": "12"
+  },
+  {
+    "station1": "Saint-Placide",
+    "station2": "Saint-Sulpice",
+    "line": "4"
+  },
+  {
+    "station1": "Sèvres-Babylone",
+    "station2": "Vaneau",
+    "line": "10"
+  },
+  {
+    "station1": "Vaugirard",
+    "station2": "Volontaires",
+    "line": "12"
+  },
+  {
+    "station1": "Villejuif - Louis Aragon",
+    "station2": "Villejuif Paul Vaillant-Couturier",
+    "line": "7"
+  },
+  {
+    "station1": "Villejuif - Léo Lagrange",
+    "station2": "Villejuif Paul Vaillant-Couturier",
+    "line": "7"
+  },
+  {
+    "station1": "Église d'Auteuil",
+    "station2": "Michel Ange-Auteuil",
+    "line": "10"
+  },
+  {
+    "station1": "Olympiades",
+    "station2": "Bibliothèque François Mitterrand",
+    "line": "14"
+  },
+  {
+    "station1": "Porte d'Orléans",
+    "station2": "Mairie de Montrouge",
+    "line": "4"
+  },
+  {
+    "station1": "Mairie de Montrouge",
+    "station2": "Barbara",
+    "line": "4"
+  },
+  {
+    "station1": "Barbara",
+    "station2": "Bagneux - Lucie Aubrac",
+    "line": "4"
+  },
+  {
+    "station1": "Cr\u00e9teil - Pr\u00e9fecture",
+    "station2": "Pointe du Lac",
+    "line": "8"
+  },
+  {
+    "station1": "Porte de la Chapelle",
+    "station2": "Front Populaire",
+    "line": "12"
+  },
+  {
+    "station1": "Front Populaire",
+    "station2": "Aimé Césaire",
+    "line": "12"
+  },
+  {
+    "station1": "Mairie d'Aubervilliers",
+    "station2": "Aimé Césaire",
+    "line": "12"
+  },
+  {
+    "station1": "Porte de Clichy",
+    "station2": "Pont Cardinet",
+    "line": "14"
+  },
+  {
+    "station1": "Porte de Clichy",
+    "station2": "Saint-Ouen",
+    "line": "14"
+  },
+  {
+    "station1": "Saint-Ouen",
+    "station2": "Mairie de Saint-Ouen",
+    "line": "14"
+  },
+  {
+    "station1": "Saint-Lazare",
+    "station2": "Pont Cardinet",
+    "line": "14"
+  }
+]
