@@ -111,6 +111,7 @@ function recupStation(map) {
                 routeLayers[routeLongName].addLayer(marker);
                 stations.push({nom: nomstation, coord: [latitud, longitud], ligne: routeLongName, couleur:color});
             });
+
             for (var route in routeLayers) {
                 overlayMaps[route] = routeLayers[route];
             }
