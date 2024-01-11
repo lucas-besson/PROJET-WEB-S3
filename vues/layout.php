@@ -20,6 +20,10 @@
         <div class="row">
             <div class="col-md-2" id="myMenu">
                 <?= $content ?>
+                <div id="myAvatar">
+                    <button class='btn btn-secondary myBtn' id="myAvatarButton">Supprimer l'avatar</button>
+                </div>
+                <button class='btn btn-secondary myBtn' id="myAvatarButton" onclick="line()" >AJouter les lignes</button>
             </div>
             <div class="col-md-10" id="myMap">
                 <div id="map"></div>

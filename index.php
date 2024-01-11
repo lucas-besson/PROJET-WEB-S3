@@ -21,9 +21,11 @@ if (isset($_GET['action'])) {
             inscriptionPage();
             break;
         case 'connecter':
-            if (isset($_POST['userName']) && isset($_POST['userPassword'])) {
+            if (isset($_POST['userName']) && isset($_POST['userPassword']) && $_POST['userName'] && $_POST['userPassword']) {
                 $_SESSION['login'] = $_POST['userName'];
                 userPage($_POST['userName'], $_POST['userPassword']);
+            } else {
+                homePage();
             }
             break;
         default:

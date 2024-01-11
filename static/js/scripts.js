@@ -20,7 +20,6 @@ function init() {
     getArrets();
     initDrag(map);
     loadStationMap();
-    line();
 }
 
 function initLayer(map){
@@ -405,6 +404,7 @@ function line(){
             data.forEach(function (station) {
                 let st1 = getCoordinates(station.station1, station.line);
                 let st2 = getCoordinates(station.station2, station.line);
+                console.log(st1, st2);
                 let latlngs = [
                     [st1.latitud, st1.longitud],
                     [st2.latitud, st2.longitud]

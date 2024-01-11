@@ -15,9 +15,7 @@
     <button type="submit" class="btn btn-secondary myBtn" id="myConnectBtn">Se connecter</button>
 </form>
 <a href="index.php?action=inscription" id="myLink">Vous n'êtes pas inscrit ? S'inscrire ici.</a>
-<div id="myAvatar">
-    <button class='btn btn-secondary myBtn' id="myAvatarButton">Supprimer l'avatar</button>
-</div>
+
 
 <?php $content = ob_get_clean(); ?>
 <?php require('./vues/layout.php') ?>

@@ -23,7 +23,7 @@ ob_start();
         </tbody>
     </table>
     <form action="index.php?action=favoris" method="post">
-        <label for="gare">Les Gares</label><input type="text" name="gare" id="gare" list="gareList">
+        <label class="myLabel" for="gare">Les Gares</label><input type="text" name="gare" id="gare" list="gareList">
         <datalist id="gareList" name="gare" required>
             <?php
             foreach ($allStation as $station){
@@ -33,9 +33,9 @@ ob_start();
             }
             ?>
         </datalist>
-        <button type="submit" class="btn btn-primary">Ajouter</button>
+        <button id="ajouter" type="submit" class="btn myBtn">Ajouter</button>
     </form>
-    <button type="button" class="btn btn-light" onclick="window.location.href='index.php?action=deconnexion';">Déconnexion</button>
+    <button id="deco" type="button" class="btn btn-light" onclick="window.location.href='index.php?action=deconnexion';">Déconnexion</button>
 
 <?php $content = ob_get_clean(); ?>
 <?php require('./vues/layout.php') ?>
