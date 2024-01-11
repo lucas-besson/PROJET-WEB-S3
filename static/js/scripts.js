@@ -1,7 +1,6 @@
 const coordParis = [48.8566, 2.3522];
 const coordIUT = [48.842055046037764, 2.2678083530152557];
 let map;
-let stations = [];
 addEventListener("load", init);
 
 function init() {
@@ -109,7 +108,6 @@ function recupStation(map) {
                             });
                     });
                 routeLayers[routeLongName].addLayer(marker);
-                stations.push({nom: nomstation, coord: [latitud, longitud], ligne: routeLongName, couleur:color});
             });
 
             for (var route in routeLayers) {
@@ -405,9 +403,7 @@ function line(){
         dataType: "json",
         success: function (data) {
             data.forEach(function (station) {
-                console.log(station.station1)
                 let st1 = getCoordinates(station.station1, station.line);
-                console.log(station.station2)
                 let st2 = getCoordinates(station.station2, station.line);
                 let latlngs = [
                     [st1.latitud, st1.longitud],
