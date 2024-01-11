@@ -1600,11 +1600,6 @@
     "line": "7"
   },
   {
-    "station1": "Porte de Champerret",
-    "station2": "Pont de Levallois - B\u00e9con",
-    "line": "3"
-  },
-  {
     "station1": "Porte de Clignancourt",
     "station2": "Simplon",
     "line": "4"
@@ -1630,8 +1625,13 @@
     "line": "3"
   },
   {
-    "station1": "Pont de Levallois - B\u00e9con",
+    "station1": "Pereire",
     "station2": "Wagram",
+    "line": "3"
+  },
+  {
+    "station1": "Pereire",
+    "station2": "Porte de Champerret",
     "line": "3"
   },
   {
@@ -1817,6 +1817,11 @@
   {
     "station1": "Saint-Lazare",
     "station2": "Pont Cardinet",
+    "line": "14"
+  },
+  {
+    "station1": "Saint-Lazare",
+    "station2": "Madeleine",
     "line": "14"
   }
 ]
