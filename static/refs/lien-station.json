@@ -6,7 +6,7 @@
   },
   {
     "station1": "Abbesses",
-    "station2": "Lamarck-Caulaincourt",
+    "station2": "Lamarck - Caulaincourt",
     "line": "12"
   },
   {
@@ -20,12 +20,12 @@
     "line": "2"
   },
   {
-    "station1": "Alma-Marceau",
+    "station1": "Alma - Marceau",
     "station2": "Franklin D. Roosevelt",
     "line": "9"
   },
   {
-    "station1": "Alma-Marceau",
+    "station1": "Alma - Marceau",
     "station2": "Iéna",
     "line": "9"
   },
@@ -46,12 +46,12 @@
   },
   {
     "station1": "Anatole France",
-    "station2": "Pont de Levallois",
+    "station2": "Pont de Levallois - Bécon",
     "line": "3"
   },
   {
     "station1": "Anvers",
-    "station2": "Barbès-Rochechouart",
+    "station2": "Barbès - Rochechouart",
     "line": "2"
   },
   {
@@ -61,7 +61,7 @@
   },
   {
     "station1": "Argentine",
-    "station2": "Charles De Gaulle-Étoile",
+    "station2": "Charles de Gaulle - Etoile",
     "line": "1"
   },
   {
@@ -86,7 +86,7 @@
   },
   {
     "station1": "Arts et Métiers",
-    "station2": "Réaumur Sébastopol",
+    "station2": "Réaumur - Sébastopol",
     "line": "3"
   },
   {
@@ -100,18 +100,18 @@
     "line": "12"
   },
   {
-    "station1": "Aubervilliers Pantin - Quatre Chemins",
+    "station1": "Aubervilliers-Pantin Quatre Chemins",
     "station2": "Porte de la Villette",
     "line": "7"
   },
   {
-    "station1": "Aubervilliers Pantin - Quatre Chemins",
+    "station1": "Aubervilliers-Pantin Quatre Chemins",
     "station2": "Fort d'Aubervilliers",
     "line": "7"
   },
   {
     "station1": "Avenue Émile Zola",
-    "station2": "La Motte Picquet-Grenelle",
+    "station2": "La Motte-Picquet - Grenelle",
     "line": "10"
   },
   {
@@ -125,17 +125,17 @@
     "line": "2"
   },
   {
-    "station1": "Barbès-Rochechouart",
+    "station1": "Barbès - Rochechouart",
     "station2": "La Chapelle",
     "line": "2"
   },
   {
-    "station1": "Barbès-Rochechouart",
+    "station1": "Barbès - Rochechouart",
     "station2": "Gare du Nord",
     "line": "4"
   },
   {
-    "station1": "Barbès-Rochechouart",
+    "station1": "Barbès - Rochechouart",
     "station2": "Château Rouge",
     "line": "4"
   },
@@ -156,7 +156,7 @@
   },
   {
     "station1": "Bastille",
-    "station2": "Saint-Paul",
+    "station2": "Saint-Paul (Le Marais)",
     "line": "1"
   },
   {
@@ -171,7 +171,7 @@
   },
   {
     "station1": "Bastille",
-    "station2": "Ledru Rollin",
+    "station2": "Ledru-Rollin",
     "line": "8"
   },
   {
@@ -211,7 +211,7 @@
   },
   {
     "station1": "Bercy",
-    "station2": "Cour Saint-Émilion",
+    "station2": "Cour Saint-Emilion",
     "line": "14"
   },
   {
@@ -231,7 +231,7 @@
   },
   {
     "station1": "Bibliothèque François Mitterrand",
-    "station2": "Cour Saint-Émilion",
+    "station2": "Cour Saint-Emilion",
     "line": "14"
   },
   {
@@ -285,18 +285,8 @@
     "line": "6"
   },
   {
-    "station1": "Bolivar",
-    "station2": "Buttes-Chaumont",
-    "line": "7bis"
-  },
-  {
-    "station1": "Bolivar",
-    "station2": "Jaurès",
-    "line": "7bis"
-  },
-  {
     "station1": "Bonne Nouvelle",
-    "station2": "Strasbourg-Saint-Denis",
+    "station2": "Strasbourg - Saint-Denis",
     "line": "8"
   },
   {
@@ -306,23 +296,13 @@
   },
   {
     "station1": "Bonne Nouvelle",
-    "station2": "Strasbourg-Saint-Denis",
+    "station2": "Strasbourg - Saint-Denis",
     "line": "9"
   },
   {
     "station1": "Bonne Nouvelle",
     "station2": "Grands Boulevards",
     "line": "9"
-  },
-  {
-    "station1": "Botzaris",
-    "station2": "Place des Fêtes",
-    "line": "7bis"
-  },
-  {
-    "station1": "Botzaris",
-    "station2": "Buttes-Chaumont",
-    "line": "7bis"
   },
   {
     "station1": "Boucicaut",
@@ -335,13 +315,13 @@
     "line": "8"
   },
   {
-    "station1": "Boulogne - Jean Jaurès",
-    "station2": "Michel Ange-Molitor",
+    "station1": "Boulogne Jean Jaurès",
+    "station2": "Michel-Ange - Molitor",
     "line": "10"
   },
   {
-    "station1": "Boulogne - Jean Jaurès",
-    "station2": "Boulogne - Pont de Saint-Cloud",
+    "station1": "Boulogne Jean Jaurès",
+    "station2": "Boulogne Pont de Saint-Cloud",
     "line": "10"
   },
   {
@@ -366,7 +346,7 @@
   },
   {
     "station1": "Bréguet-Sabin",
-    "station2": "Richard Lenoir",
+    "station2": "Richard-Lenoir",
     "line": "5"
   },
   {
@@ -406,16 +386,16 @@
   },
   {
     "station1": "Cambronne",
-    "station2": "La Motte Picquet-Grenelle",
+    "station2": "La Motte-Picquet - Grenelle",
     "line": "6"
   },
   {
-    "station1": "Campo Formio",
+    "station1": "Campo-Formio",
     "station2": "Place d'Italie",
     "line": "5"
   },
   {
-    "station1": "Campo Formio",
+    "station1": "Campo-Formio",
     "station2": "Saint-Marcel",
     "line": "5"
   },
@@ -426,7 +406,7 @@
   },
   {
     "station1": "Cardinal Lemoine",
-    "station2": "Maubert-Mutualité",
+    "station2": "Maubert - Mutualité",
     "line": "10"
   },
   {
@@ -440,32 +420,32 @@
     "line": "13"
   },
   {
-    "station1": "Censier-Daubenton",
+    "station1": "Censier - Daubenton",
     "station2": "Les Gobelins",
     "line": "7"
   },
   {
-    "station1": "Censier-Daubenton",
+    "station1": "Censier - Daubenton",
     "station2": "Place Monge",
     "line": "7"
   },
   {
-    "station1": "Champs-Élysées – Clemenceau",
+    "station1": "Champs-\u00c9lys\u00e9es - Clemenceau",
     "station2": "Concorde",
     "line": "1"
   },
   {
-    "station1": "Champs-Élysées – Clemenceau",
+    "station1": "Champs-\u00c9lys\u00e9es - Clemenceau",
     "station2": "Franklin D. Roosevelt",
     "line": "1"
   },
   {
-    "station1": "Champs-Élysées – Clemenceau",
+    "station1": "Champs-\u00c9lys\u00e9es - Clemenceau",
     "station2": "Invalides",
     "line": "13"
   },
   {
-    "station1": "Champs-Élysées – Clemenceau",
+    "station1": "Champs-\u00c9lys\u00e9es - Clemenceau",
     "station2": "Miromesnil",
     "line": "13"
   },
@@ -476,7 +456,7 @@
   },
   {
     "station1": "Charenton-Écoles",
-    "station2": "École Vétérinaire de Maisons-Alfort",
+    "station2": "Ecole V\u00e9t\u00e9rinaire de Maisons-Alfort",
     "line": "8"
   },
   {
@@ -490,22 +470,22 @@
     "line": "10"
   },
   {
-    "station1": "Charles De Gaulle-Étoile",
+    "station1": "Charles de Gaulle-Etoile",
     "station2": "George V",
     "line": "1"
   },
   {
-    "station1": "Charles De Gaulle-Étoile",
+    "station1": "Charles de Gaulle-Etoile",
     "station2": "Ternes",
     "line": "2"
   },
   {
-    "station1": "Charles De Gaulle-Étoile",
+    "station1": "Charles de Gaulle-Etoile",
     "station2": "Victor Hugo",
     "line": "2"
   },
   {
-    "station1": "Charles De Gaulle-Étoile",
+    "station1": "Charles de Gaulle-Etoile",
     "station2": "Kléber",
     "line": "6"
   },
@@ -571,7 +551,7 @@
   },
   {
     "station1": "Château d'Eau",
-    "station2": "Strasbourg-Saint-Denis",
+    "station2": "Strasbourg - Saint-Denis",
     "line": "4"
   },
   {
@@ -580,53 +560,53 @@
     "line": "4"
   },
   {
-    "station1": "Chatelet",
-    "station2": "Hôtel de Ville",
+    "station1": "Ch\u00e2telet",
+    "station2": "H\u00f4tel de Ville",
     "line": "1"
   },
   {
-    "station1": "Chatelet",
+    "station1": "Ch\u00e2telet",
     "station2": "Louvre-Rivoli",
     "line": "1"
   },
   {
-    "station1": "Chatelet",
-    "station2": "Hôtel de Ville",
+    "station1": "Ch\u00e2telet",
+    "station2": "H\u00f4tel de Ville",
     "line": "11"
   },
   {
-    "station1": "Chatelet",
+    "station1": "Ch\u00e2telet",
     "station2": "Gare de Lyon",
     "line": "14"
   },
   {
-    "station1": "Chatelet",
+    "station1": "Ch\u00e2telet",
     "station2": "Pyramides",
     "line": "14"
   },
   {
-    "station1": "Chatelet",
+    "station1": "Ch\u00e2telet",
     "station2": "Cité",
     "line": "4"
   },
   {
-    "station1": "Chatelet",
+    "station1": "Ch\u00e2telet",
     "station2": "Les Halles",
     "line": "4"
   },
   {
-    "station1": "Chatelet",
-    "station2": "Pont Marie",
+    "station1": "Ch\u00e2telet",
+    "station2": "Pont Marie (Cit\u00e9 des Arts)",
     "line": "7"
   },
   {
-    "station1": "Chatelet",
+    "station1": "Ch\u00e2telet",
     "station2": "Pont Neuf",
     "line": "7"
   },
   {
     "station1": "Châtillon-Montrouge",
-    "station2": "Malakoff - Rue Étienne Dolet",
+    "station2": "Malakoff - Rue Etienne Dolet",
     "line": "13"
   },
   {
@@ -636,7 +616,7 @@
   },
   {
     "station1": "Cluny-La Sorbonne",
-    "station2": "Maubert-Mutualité",
+    "station2": "Maubert - Mutualité",
     "line": "10"
   },
   {
@@ -651,7 +631,7 @@
   },
   {
     "station1": "Commerce",
-    "station2": "La Motte Picquet-Grenelle",
+    "station2": "La Motte-Picquet - Grenelle",
     "line": "8"
   },
   {
@@ -750,24 +730,19 @@
     "line": "9"
   },
   {
-    "station1": "Créteil–Préfecture",
+    "station1": "Cr\u00e9teil - Pr\u00e9fecture",
     "station2": "Créteil-Université",
     "line": "8"
   },
   {
     "station1": "Créteil-Université",
-    "station2": "Créteil–L’Échat",
+    "station2": "Cr\u00e9teil - L'\u00c9chat",
     "line": "8"
   },
   {
-    "station1": "Créteil–L’Échat",
+    "station1": "Cr\u00e9teil - L'\u00c9chat",
     "station2": "Maisons-Alfort-Les Juilliottes",
     "line": "8"
-  },
-  {
-    "station1": "Danube",
-    "station2": "Botzaris",
-    "line": "7bis"
   },
   {
     "station1": "Daumesnil",
@@ -806,7 +781,7 @@
   },
   {
     "station1": "Dupleix",
-    "station2": "La Motte Picquet-Grenelle",
+    "station2": "La Motte-Picquet - Grenelle",
     "line": "6"
   },
   {
@@ -821,7 +796,7 @@
   },
   {
     "station1": "Duroc",
-    "station2": "Montparnasse Bienvenüe",
+    "station2": "Montparnasse Bienvenue",
     "line": "13"
   },
   {
@@ -836,17 +811,17 @@
   },
   {
     "station1": "Edgar Quinet",
-    "station2": "Montparnasse Bienvenüe",
+    "station2": "Montparnasse Bienvenue",
     "line": "6"
   },
   {
-    "station1": "Esplanade de la Défense",
+    "station1": "Esplanade de la D\u00e9fense",
     "station2": "Pont de Neuilly",
     "line": "1"
   },
   {
-    "station1": "Esplanade de la Défense",
-    "station2": "La Défense",
+    "station1": "Esplanade de la D\u00e9fense",
+    "station2": "La D\u00e9fense (Grande Arche)",
     "line": "1"
   },
   {
@@ -861,7 +836,7 @@
   },
   {
     "station1": "Exelmans",
-    "station2": "Michel Ange-Molitor",
+    "station2": "Michel-Ange - Molitor",
     "line": "9"
   },
   {
@@ -876,7 +851,7 @@
   },
   {
     "station1": "Faidherbe Chaligny",
-    "station2": "Ledru Rollin",
+    "station2": "Ledru-Rollin",
     "line": "8"
   },
   {
@@ -886,7 +861,7 @@
   },
   {
     "station1": "Falguière",
-    "station2": "Montparnasse Bienvenüe",
+    "station2": "Montparnasse Bienvenue",
     "line": "12"
   },
   {
@@ -920,17 +895,17 @@
     "line": "13"
   },
   {
-    "station1": "Gaité",
+    "station1": "Ga\u00eet\u00e9",
     "station2": "Pernety",
     "line": "13"
   },
   {
-    "station1": "Gaité",
-    "station2": "Montparnasse Bienvenüe",
+    "station1": "Ga\u00eet\u00e9",
+    "station2": "Montparnasse Bienvenue",
     "line": "13"
   },
   {
-    "station1": "Galliéni",
+    "station1": "Gallieni",
     "station2": "Porte de Bagnolet",
     "line": "3"
   },
@@ -943,11 +918,6 @@
     "station1": "Gambetta",
     "station2": "Père Lachaise",
     "line": "3"
-  },
-  {
-    "station1": "Gambetta",
-    "station2": "Pelleport",
-    "line": "3bis"
   },
   {
     "station1": "Gare d'Austerlitz",
@@ -1050,12 +1020,12 @@
     "line": "5"
   },
   {
-    "station1": "Hôtel de Ville",
-    "station2": "Saint-Paul",
+    "station1": "H\u00f4tel de Ville",
+    "station2": "Saint-Paul (Le Marais)",
     "line": "1"
   },
   {
-    "station1": "Hôtel de Ville",
+    "station1": "H\u00f4tel de Ville",
     "station2": "Rambuteau",
     "line": "11"
   },
@@ -1105,11 +1075,6 @@
     "line": "5"
   },
   {
-    "station1": "Jaurès",
-    "station2": "Louis Blanc",
-    "line": "7bis"
-  },
-  {
     "station1": "Javel - André Citroën",
     "station2": "Église d'Auteuil",
     "line": "10"
@@ -1155,12 +1120,12 @@
     "line": "13"
   },
   {
-    "station1": "La Motte Picquet-Grenelle",
+    "station1": "La Motte-Picquet - Grenelle",
     "station2": "Ségur",
     "line": "10"
   },
   {
-    "station1": "La Motte Picquet-Grenelle",
+    "station1": "La Motte-Picquet - Grenelle",
     "station2": "École Militaire",
     "line": "8"
   },
@@ -1201,7 +1166,7 @@
   },
   {
     "station1": "Les Halles",
-    "station2": "Étienne Marcel",
+    "station2": "Etienne Marcel",
     "line": "4"
   },
   {
@@ -1306,12 +1271,12 @@
   },
   {
     "station1": "Maisons-Alfort-Stade",
-    "station2": "École Vétérinaire de Maisons-Alfort",
+    "station2": "Ecole V\u00e9t\u00e9rinaire de Maisons-Alfort",
     "line": "8"
   },
   {
     "station1": "Malakoff - Plateau de Vanves",
-    "station2": "Malakoff - Rue Étienne Dolet",
+    "station2": "Malakoff - Rue Etienne Dolet",
     "line": "13"
   },
   {
@@ -1361,11 +1326,11 @@
   },
   {
     "station1": "Michel Ange-Auteuil",
-    "station2": "Michel Ange-Molitor",
+    "station2": "Michel-Ange - Molitor",
     "line": "9"
   },
   {
-    "station1": "Michel Ange-Molitor",
+    "station1": "Michel-Ange - Molitor",
     "station2": "Chardon Lagache",
     "line": "10"
   },
@@ -1405,22 +1370,22 @@
     "line": "8"
   },
   {
-    "station1": "Montparnasse Bienvenüe",
+    "station1": "Montparnasse Bienvenue",
     "station2": "Notre-Dame-des-Champs",
     "line": "12"
   },
   {
-    "station1": "Montparnasse Bienvenüe",
+    "station1": "Montparnasse Bienvenue",
     "station2": "Vavin",
     "line": "4"
   },
   {
-    "station1": "Montparnasse Bienvenüe",
+    "station1": "Montparnasse Bienvenue",
     "station2": "Saint-Placide",
     "line": "4"
   },
   {
-    "station1": "Montparnasse Bienvenüe",
+    "station1": "Montparnasse Bienvenue",
     "station2": "Pasteur",
     "line": "6"
   },
@@ -1471,7 +1436,7 @@
   },
   {
     "station1": "Oberkampf",
-    "station2": "Richard Lenoir",
+    "station2": "Richard-Lenoir",
     "line": "5"
   },
   {
@@ -1560,11 +1525,6 @@
     "line": "6"
   },
   {
-    "station1": "Pelleport",
-    "station2": "Saint-Fargeau",
-    "line": "3bis"
-  },
-  {
     "station1": "Pernety",
     "station2": "Plaisance",
     "line": "13"
@@ -1600,17 +1560,12 @@
     "line": "11"
   },
   {
-    "station1": "Place des Fêtes",
-    "station2": "Pré Saint-Gervais",
-    "line": "7bis"
-  },
-  {
     "station1": "Plaisance",
     "station2": "Porte de Vanves",
     "line": "13"
   },
   {
-    "station1": "Pont Marie",
+    "station1": "Pont Marie (Cit\u00e9 des Arts)",
     "station2": "Sully-Morland",
     "line": "7"
   },
@@ -1626,12 +1581,12 @@
   },
   {
     "station1": "Porte d'Auteuil",
-    "station2": "Michel Ange-Molitor",
+    "station2": "Michel-Ange - Molitor",
     "line": "10"
   },
   {
     "station1": "Porte d'Auteuil",
-    "station2": "Boulogne - Jean Jaurès",
+    "station2": "Boulogne Jean Jaurès",
     "line": "10"
   },
   {
@@ -1646,7 +1601,7 @@
   },
   {
     "station1": "Porte de Champerret",
-    "station2": "Pereire-Levallois",
+    "station2": "Pont de Levallois - B\u00e9con",
     "line": "3"
   },
   {
@@ -1670,22 +1625,12 @@
     "line": "11"
   },
   {
-    "station1": "Porte des Lilas",
-    "station2": "Saint-Fargeau",
-    "line": "3bis"
-  },
-  {
-    "station1": "Pré Saint-Gervais",
-    "station2": "Danube",
-    "line": "7bis"
-  },
-  {
     "station1": "Père Lachaise",
     "station2": "Rue Saint-Maur",
     "line": "3"
   },
   {
-    "station1": "Pereire-Levallois",
+    "station1": "Pont de Levallois - B\u00e9con",
     "station2": "Wagram",
     "line": "3"
   },
@@ -1735,18 +1680,18 @@
     "line": "12"
   },
   {
-    "station1": "Réaumur Sébastopol",
+    "station1": "Réaumur-Sébastopol",
     "station2": "Sentier",
     "line": "3"
   },
   {
-    "station1": "Réaumur Sébastopol",
-    "station2": "Étienne Marcel",
+    "station1": "Réaumur-Sébastopol",
+    "station2": "Etienne Marcel",
     "line": "4"
   },
   {
-    "station1": "Réaumur Sébastopol",
-    "station2": "Strasbourg-Saint-Denis",
+    "station1": "Réaumur-Sébastopol",
+    "station2": "Strasbourg - Saint-Denis",
     "line": "4"
   },
   {
@@ -1756,12 +1701,12 @@
   },
   {
     "station1": "République",
-    "station2": "Strasbourg-Saint-Denis",
+    "station2": "Strasbourg - Saint-Denis",
     "line": "8"
   },
   {
     "station1": "République",
-    "station2": "Strasbourg-Saint-Denis",
+    "station2": "Strasbourg - Saint-Denis",
     "line": "9"
   },
   {
@@ -1815,556 +1760,6 @@
     "line": "10"
   },
   {
-    "station1": "Arts et Métiers",
-    "station2": "Arts et Métiers",
-    "line": "11"
-  },
-  {
-    "station1": "Barbès-Rochechouart",
-    "station2": "Barbès-Rochechouart",
-    "line": "2"
-  },
-  {
-    "station1": "Bastille",
-    "station2": "Bastille",
-    "line": "1"
-  },
-  {
-    "station1": "Bastille",
-    "station2": "Bastille",
-    "line": "1"
-  },
-  {
-    "station1": "Bastille",
-    "station2": "Bastille",
-    "line": "5"
-  },
-  {
-    "station1": "Belleville",
-    "station2": "Belleville",
-    "line": "11"
-  },
-  {
-    "station1": "Bercy",
-    "station2": "Bercy",
-    "line": "14"
-  },
-  {
-    "station1": "Bonne Nouvelle",
-    "station2": "Bonne Nouvelle",
-    "line": "8"
-  },
-  {
-    "station1": "Champs-Élysées – Clemenceau",
-    "station2": "Champs-Élysées – Clemenceau",
-    "line": "1"
-  },
-  {
-    "station1": "Charles De Gaulle-Étoile",
-    "station2": "Charles De Gaulle-Étoile",
-    "line": "1"
-  },
-  {
-    "station1": "Charles De Gaulle-Étoile",
-    "station2": "Charles De Gaulle-Étoile",
-    "line": "1"
-  },
-  {
-    "station1": "Charles De Gaulle-Étoile",
-    "station2": "Charles De Gaulle-Étoile",
-    "line": "2"
-  },
-  {
-    "station1": "Chaussée d'Antin - La Fayette",
-    "station2": "Chaussée d'Antin - La Fayette",
-    "line": "7"
-  },
-  {
-    "station1": "Chatelet",
-    "station2": "Chatelet",
-    "line": "1"
-  },
-  {
-    "station1": "Chatelet",
-    "station2": "Chatelet",
-    "line": "1"
-  },
-  {
-    "station1": "Chatelet",
-    "station2": "Chatelet",
-    "line": "1"
-  },
-  {
-    "station1": "Chatelet",
-    "station2": "Chatelet",
-    "line": "1"
-  },
-  {
-    "station1": "Chatelet",
-    "station2": "Chatelet",
-    "line": "11"
-  },
-  {
-    "station1": "Chatelet",
-    "station2": "Chatelet",
-    "line": "11"
-  },
-  {
-    "station1": "Chatelet",
-    "station2": "Chatelet",
-    "line": "11"
-  },
-  {
-    "station1": "Chatelet",
-    "station2": "Chatelet",
-    "line": "14"
-  },
-  {
-    "station1": "Chatelet",
-    "station2": "Chatelet",
-    "line": "14"
-  },
-  {
-    "station1": "Chatelet",
-    "station2": "Chatelet",
-    "line": "4"
-  },
-  {
-    "station1": "Concorde",
-    "station2": "Concorde",
-    "line": "1"
-  },
-  {
-    "station1": "Concorde",
-    "station2": "Concorde",
-    "line": "1"
-  },
-  {
-    "station1": "Concorde",
-    "station2": "Concorde",
-    "line": "12"
-  },
-  {
-    "station1": "Daumesnil",
-    "station2": "Daumesnil",
-    "line": "6"
-  },
-  {
-    "station1": "Denfert-Rochereau",
-    "station2": "Denfert-Rochereau",
-    "line": "4"
-  },
-  {
-    "station1": "Duroc",
-    "station2": "Duroc",
-    "line": "10"
-  },
-  {
-    "station1": "Franklin D. Roosevelt",
-    "station2": "Franklin D. Roosevelt",
-    "line": "1"
-  },
-  {
-    "station1": "Gambetta",
-    "station2": "Gambetta",
-    "line": "3"
-  },
-  {
-    "station1": "Gare d'Austerlitz",
-    "station2": "Gare d'Austerlitz",
-    "line": "10"
-  },
-  {
-    "station1": "Gare de Lyon",
-    "station2": "Gare de Lyon",
-    "line": "1"
-  },
-  {
-    "station1": "Gare de l'Est",
-    "station2": "Gare de l'Est",
-    "line": "4"
-  },
-  {
-    "station1": "Gare de l'Est",
-    "station2": "Gare de l'Est",
-    "line": "4"
-  },
-  {
-    "station1": "Gare de l'Est",
-    "station2": "Gare de l'Est",
-    "line": "5"
-  },
-  {
-    "station1": "Gare du Nord",
-    "station2": "Gare du Nord",
-    "line": "4"
-  },
-  {
-    "station1": "Havre-Caumartin",
-    "station2": "Havre-Caumartin",
-    "line": "3"
-  },
-  {
-    "station1": "Hôtel de Ville",
-    "station2": "Hôtel de Ville",
-    "line": "1"
-  },
-  {
-    "station1": "Invalides",
-    "station2": "Invalides",
-    "line": "13"
-  },
-  {
-    "station1": "Jaurès",
-    "station2": "Jaurès",
-    "line": "2"
-  },
-  {
-    "station1": "Jaurès",
-    "station2": "Jaurès",
-    "line": "2"
-  },
-  {
-    "station1": "Jaurès",
-    "station2": "Jaurès",
-    "line": "5"
-  },
-  {
-    "station1": "Jussieu",
-    "station2": "Jussieu",
-    "line": "10"
-  },
-  {
-    "station1": "La Motte Picquet-Grenelle",
-    "station2": "La Motte Picquet-Grenelle",
-    "line": "10"
-  },
-  {
-    "station1": "La Motte Picquet-Grenelle",
-    "station2": "La Motte Picquet-Grenelle",
-    "line": "10"
-  },
-  {
-    "station1": "La Motte Picquet-Grenelle",
-    "station2": "La Motte Picquet-Grenelle",
-    "line": "6"
-  },
-  {
-    "station1": "Louis Blanc",
-    "station2": "Louis Blanc",
-    "line": "7"
-  },
-  {
-    "station1": "Madeleine",
-    "station2": "Madeleine",
-    "line": "12"
-  },
-  {
-    "station1": "Madeleine",
-    "station2": "Madeleine",
-    "line": "12"
-  },
-  {
-    "station1": "Madeleine",
-    "station2": "Madeleine",
-    "line": "14"
-  },
-  {
-    "station1": "Marcadet-Poissonniers",
-    "station2": "Marcadet-Poissonniers",
-    "line": "12"
-  },
-  {
-    "station1": "Michel Ange-Auteuil",
-    "station2": "Michel Ange-Auteuil",
-    "line": "10"
-  },
-  {
-    "station1": "Michel Ange-Molitor",
-    "station2": "Michel Ange-Molitor",
-    "line": "10"
-  },
-  {
-    "station1": "Miromesnil",
-    "station2": "Miromesnil",
-    "line": "13"
-  },
-  {
-    "station1": "Montparnasse Bienvenüe",
-    "station2": "Montparnasse Bienvenüe",
-    "line": "12"
-  },
-  {
-    "station1": "Montparnasse Bienvenüe",
-    "station2": "Montparnasse Bienvenüe",
-    "line": "12"
-  },
-  {
-    "station1": "Montparnasse Bienvenüe",
-    "station2": "Montparnasse Bienvenüe",
-    "line": "12"
-  },
-  {
-    "station1": "Montparnasse Bienvenüe",
-    "station2": "Montparnasse Bienvenüe",
-    "line": "13"
-  },
-  {
-    "station1": "Montparnasse Bienvenüe",
-    "station2": "Montparnasse Bienvenüe",
-    "line": "13"
-  },
-  {
-    "station1": "Montparnasse Bienvenüe",
-    "station2": "Montparnasse Bienvenüe",
-    "line": "4"
-  },
-  {
-    "station1": "Nation",
-    "station2": "Nation",
-    "line": "1"
-  },
-  {
-    "station1": "Nation",
-    "station2": "Nation",
-    "line": "1"
-  },
-  {
-    "station1": "Nation",
-    "station2": "Nation",
-    "line": "1"
-  },
-  {
-    "station1": "Nation",
-    "station2": "Nation",
-    "line": "2"
-  },
-  {
-    "station1": "Nation",
-    "station2": "Nation",
-    "line": "2"
-  },
-  {
-    "station1": "Nation",
-    "station2": "Nation",
-    "line": "6"
-  },
-  {
-    "station1": "Oberkampf",
-    "station2": "Oberkampf",
-    "line": "5"
-  },
-  {
-    "station1": "Odéon",
-    "station2": "Odéon",
-    "line": "10"
-  },
-  {
-    "station1": "Opéra",
-    "station2": "Opéra",
-    "line": "3"
-  },
-  {
-    "station1": "Opéra",
-    "station2": "Opéra",
-    "line": "3"
-  },
-  {
-    "station1": "Opéra",
-    "station2": "Opéra",
-    "line": "7"
-  },
-  {
-    "station1": "Palais Royal - Musée du Louvre",
-    "station2": "Palais Royal - Musée du Louvre",
-    "line": "1"
-  },
-  {
-    "station1": "Pasteur",
-    "station2": "Pasteur",
-    "line": "12"
-  },
-  {
-    "station1": "Pigalle",
-    "station2": "Pigalle",
-    "line": "12"
-  },
-  {
-    "station1": "Place d'Italie",
-    "station2": "Place d'Italie",
-    "line": "5"
-  },
-  {
-    "station1": "Place d'Italie",
-    "station2": "Place d'Italie",
-    "line": "5"
-  },
-  {
-    "station1": "Place d'Italie",
-    "station2": "Place d'Italie",
-    "line": "6"
-  },
-  {
-    "station1": "Place de Clichy",
-    "station2": "Place de Clichy",
-    "line": "13"
-  },
-  {
-    "station1": "Place des Fêtes",
-    "station2": "Place des Fêtes",
-    "line": "11"
-  },
-  {
-    "station1": "Porte des Lilas",
-    "station2": "Porte des Lilas",
-    "line": "11"
-  },
-  {
-    "station1": "Pyramides",
-    "station2": "Pyramides",
-    "line": "14"
-  },
-  {
-    "station1": "Père Lachaise",
-    "station2": "Père Lachaise",
-    "line": "2"
-  },
-  {
-    "station1": "Raspail",
-    "station2": "Raspail",
-    "line": "4"
-  },
-  {
-    "station1": "Reuilly-Diderot",
-    "station2": "Reuilly-Diderot",
-    "line": "1"
-  },
-  {
-    "station1": "Richelieu-Drouot",
-    "station2": "Richelieu-Drouot",
-    "line": "8"
-  },
-  {
-    "station1": "Grands Boulevards",
-    "station2": "Grands Boulevards",
-    "line": "8"
-  },
-  {
-    "station1": "Réaumur Sébastopol",
-    "station2": "Réaumur Sébastopol",
-    "line": "3"
-  },
-  {
-    "station1": "République",
-    "station2": "République",
-    "line": "11"
-  },
-  {
-    "station1": "République",
-    "station2": "République",
-    "line": "11"
-  },
-  {
-    "station1": "République",
-    "station2": "République",
-    "line": "11"
-  },
-  {
-    "station1": "République",
-    "station2": "République",
-    "line": "11"
-  },
-  {
-    "station1": "République",
-    "station2": "République",
-    "line": "3"
-  },
-  {
-    "station1": "République",
-    "station2": "République",
-    "line": "3"
-  },
-  {
-    "station1": "République",
-    "station2": "République",
-    "line": "3"
-  },
-  {
-    "station1": "République",
-    "station2": "République",
-    "line": "5"
-  },
-  {
-    "station1": "République",
-    "station2": "République",
-    "line": "5"
-  },
-  {
-    "station1": "République",
-    "station2": "République",
-    "line": "8"
-  },
-  {
-    "station1": "Saint-Lazare",
-    "station2": "Saint-Lazare",
-    "line": "12"
-  },
-  {
-    "station1": "Saint-Lazare",
-    "station2": "Saint-Lazare",
-    "line": "12"
-  },
-  {
-    "station1": "Saint-Lazare",
-    "station2": "Saint-Lazare",
-    "line": "13"
-  },
-  {
-    "station1": "Stalingrad",
-    "station2": "Stalingrad",
-    "line": "2"
-  },
-  {
-    "station1": "Stalingrad",
-    "station2": "Stalingrad",
-    "line": "2"
-  },
-  {
-    "station1": "Stalingrad",
-    "station2": "Stalingrad",
-    "line": "5"
-  },
-  {
-    "station1": "Strasbourg-Saint-Denis",
-    "station2": "Strasbourg-Saint-Denis",
-    "line": "4"
-  },
-  {
-    "station1": "Strasbourg-Saint-Denis",
-    "station2": "Strasbourg-Saint-Denis",
-    "line": "4"
-  },
-  {
-    "station1": "Strasbourg-Saint-Denis",
-    "station2": "Strasbourg-Saint-Denis",
-    "line": "8"
-  },
-  {
-    "station1": "Sèvres-Babylone",
-    "station2": "Sèvres-Babylone",
-    "line": "10"
-  },
-  {
-    "station1": "Trocadéro",
-    "station2": "Trocadéro",
-    "line": "6"
-  },
-  {
-    "station1": "Villiers",
-    "station2": "Villiers",
-    "line": "2"
-  },
-  {
     "station1": "Olympiades",
     "station2": "Bibliothèque François Mitterrand",
     "line": "14"
@@ -2385,8 +1780,8 @@
     "line": "4"
   },
   {
-    "station1": "Créteil–Préfecture",
-    "station2": "Créteil - Pointe du Lac",
+    "station1": "Cr\u00e9teil - Pr\u00e9fecture",
+    "station2": "Pointe du Lac",
     "line": "8"
   },
   {
