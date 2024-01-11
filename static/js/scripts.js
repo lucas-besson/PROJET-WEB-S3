@@ -367,8 +367,8 @@ function addHoraireUser(){
 
             });
     });
-
 }
+
 let stationMap = new Map();
 function getStationLineName(station, line) {
     var cleanedStation = station.replace(/ |-/g, '');
